@@ -35,7 +35,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.camera.HAL3.enabled=1 \
-    persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
+    persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera,org.pixelexperience.faceunlock \
+    vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
 
 # IMS
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
