@@ -32,6 +32,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
+# Camera
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.camera.HAL3.enabled=1 \
+    persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
+
 # IMS
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.dbg.volte_avail_ovr=1 \
