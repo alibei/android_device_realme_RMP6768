@@ -122,7 +122,9 @@ PRODUCT_COPY_FILES += \
 
 # Symbols
 PRODUCT_PACKAGES += \
-    libshim_vtservice
+    libshim_vtservice \
+    libshim_showlogo
+
     
 PRODUCT_PACKAGES += \
     ImsServiceBase
