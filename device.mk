@@ -96,10 +96,12 @@ PRODUCT_PACKAGES += \
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
 
-# WiFi Overlays
+# WiFi and IMS Overlays
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
-    WifiOverlay
+    WifiOverlay \
+    MtkIms \
+    MtkImsTelephony
 
 # Overlays
 PRODUCT_PACKAGES += \
