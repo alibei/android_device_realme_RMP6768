@@ -26,4 +26,3 @@ vendor/lib/modules/udc_lib.ko:product/vendor_overlay/30/lib/modules/udc_lib.ko
 vendor/lib/modules/wlan_drv_gen4m.ko:product/vendor_overlay/30/lib/modules/wlan_drv_gen4m.ko
 vendor/lib/modules/wmt_chrdev_wifi.ko:product/vendor_overlay/30/lib/modules/wmt_chrdev_wifi.ko
 vendor/lib/modules/wmt_drv.ko:product/vendor_overlay/30/lib/modules/wmt_drv.ko
-
