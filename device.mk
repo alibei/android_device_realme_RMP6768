@@ -75,6 +75,10 @@ AB_OTA_UPDATER := false
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
 
+# ImsInit hack
+PRODUCT_PACKAGES += \
+    ImsInit
+
 # Init
 PRODUCT_PACKAGES += \
     init.mt6768.rc \
