@@ -277,12 +277,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio-V1.4-java
 
-# RcsService
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    RcsService \
-    PresencePolling
-
 # RootDir
 PRODUCT_PACKAGES += \
     init.connectivity.rc \
