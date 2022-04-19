@@ -1160,8 +1160,6 @@ vendor/etc/mtk_omx_core.cfg
 -vendor/lib64/vendor.mediatek.hardware.mtkcodecservice@1.1.so
 
 # Misc
--vendor/bin/meta_tst
-vendor/etc/init/loghidlvendorservice.rc
 vendor/etc/MNL_Config.xml
 vendor/etc/armnn_app.config
 vendor/etc/fstb.cfg
@@ -1172,7 +1170,6 @@ vendor/etc/meow.cfg
 -vendor/lib64/libdlbdsservice.so
 -vendor/lib64/libgz_gp_client.so
 -vendor/lib64/libgz_uree.so
--vendor/lib64/vendor.mediatek.hardware.log@1.0.so
 
 # Neural Networks
 -vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
