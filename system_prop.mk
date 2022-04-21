@@ -6,6 +6,14 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
      persist.bluetooth.bluetooth_audio_hal.disabled=true
 
+# Iorap
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+
+# Blurs
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1
+
 # Performance
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.mtk_perf_simple_start_win=1 \
