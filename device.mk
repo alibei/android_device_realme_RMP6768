@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 # A/B
 AB_OTA_UPDATER := false
 
+# Freeform Multiwindow
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml
+
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
