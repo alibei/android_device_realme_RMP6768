@@ -64,6 +64,11 @@ PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 TARGET_SCREEN_DENSITY := 240
 
+# Dex
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Settings \
+    SystemUI
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
