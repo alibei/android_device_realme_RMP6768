@@ -54,3 +54,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Privapp permissions whitelisting
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.control_privapp_permissions=log
+
+# Audio
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.camera.sound.forced=0 \
+    ro.audio.silent=0 \
+    ro.config.vc_call_vol_steps=7
