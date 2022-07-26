@@ -16,3 +16,6 @@
 
 DEVICE_PATH := device/realme/RMP6768
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
