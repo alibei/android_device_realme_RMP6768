@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
-    
+
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -51,6 +51,10 @@ TARGET_SCREEN_DENSITY := 240
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Recovery
+PRODUCT_PACKAGES += \
+    init.recovery.mt6768.rc
+    
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
 
