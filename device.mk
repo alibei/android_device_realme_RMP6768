@@ -38,6 +38,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.RMP6768
+
+# HIDL
+PRODUCT_PACKAGES += \
+    libhardware
+    
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
