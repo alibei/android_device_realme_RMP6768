@@ -16,6 +16,36 @@
 
 DEVICE_PATH := device/realme/RMP6768
 
+# Include GSI keys
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# VNDK
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
+PRODUCT_SHIPPING_API_LEVEL := 30
+
+# Dynamic Partition
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := false
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+
+# Screen density
+PRODUCT_AAPT_CONFIG := xxxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
+TARGET_SCREEN_DENSITY := 240
+
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
+# Tablet
+PRODUCT_CHARACTERISTICS := tablet
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
