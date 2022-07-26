@@ -30,6 +30,10 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/vendor_overlay/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS)/)
 
+# Copy fstab
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/vendor_overlay/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
+    
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
@@ -58,7 +62,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mt6768.rc
-    
+
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
 
