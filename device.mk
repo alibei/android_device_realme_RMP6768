@@ -55,6 +55,9 @@ TARGET_SCREEN_DENSITY := 240
 PRODUCT_PACKAGES += \
     fastbootd
 
+# A/B
+AB_OTA_UPDATER := false
+
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
