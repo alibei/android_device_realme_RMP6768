@@ -54,6 +54,10 @@ PRODUCT_PACKAGES += \
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
+
+# Init
+PRODUCT_PACKAGES += \
+    init.mt6768.rc
     
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
