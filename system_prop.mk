@@ -11,3 +11,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Surfaceflinger
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 	debug.sf.latch_unsignaled=1
+
+# IMS
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1
