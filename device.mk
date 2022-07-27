@@ -44,7 +44,9 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    libhardware
+    libhardware \
+    libhidltransport \
+    libhwbinder
     
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
