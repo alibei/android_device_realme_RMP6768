@@ -26,4 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.filenames_mode=aes-256-cts \
     ro.crypto.volume.metadata.method=dm-default-key \
     ro.crypto.volume.options=::v2
-	
+
+# Privapp permissions whitelisting
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.control_privapp_permissions=log
