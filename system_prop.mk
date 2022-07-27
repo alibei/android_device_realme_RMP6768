@@ -2,6 +2,10 @@
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
 
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+     persist.bluetooth.bluetooth_audio_hal.disabled=true
+
 # Performance
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.mtk_perf_simple_start_win=1 \
