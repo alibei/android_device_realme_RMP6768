@@ -6,10 +6,34 @@ on post-fs-data
     # Services
     setprop init.svc.console stopped
 
+    rm /data/debug.logcat.txt
+    rm /data/debug.logcat.txt
+
+service debug_kernel /system/bin/sh -c "cat /proc/kmsg > /data/debug.kernel.txt"
+    class main
+    user root
+    oneshot
+
+service debug_logcat /system/bin/logcat -f /data/debug.logcat.txt -v threadtime *:E
+    class main
+    user root
+    group system
+
+
+service debug_properties /system/bin/sh -c "getprop > /data/debug.properties.txt"
+    class main
+    user root
+    oneshot
+
+service debug_roottree /system/bin/sh -c "ls -la / > /data/debug.roottree.txt"
+    class main
+    user root
+    oneshot
+
 on property:sys.boot_completed=1
     # OTG
     write /sys/class/power_supply/usb/otg_switch 1
-
+    
 on boot
     chmod 0664 /sys/class/leds/lcd-backlight/max_brightness
     chown system system /sys/class/leds/lcd-backlight/max_brightness
