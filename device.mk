@@ -77,6 +77,11 @@ PRODUCT_PACKAGES += \
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
 
+# WiFi Overlays
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
+    WifiOverlay
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
