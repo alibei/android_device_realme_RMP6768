@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
 
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworkResOverlay
+
 # System prop
 -include $(DEVICE_PATH)/system_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
