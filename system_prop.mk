@@ -19,3 +19,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1
+
+# Encryption
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.dm_default_key.options_format.version=2 \
+    ro.crypto.volume.filenames_mode=aes-256-cts \
+    ro.crypto.volume.metadata.method=dm-default-key \
+    ro.crypto.volume.options=::v2
+	
