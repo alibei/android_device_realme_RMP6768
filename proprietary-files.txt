@@ -1,0 +1,6 @@
+# Bluetooth (AptX)
+system/lib64/libaptX_encoder.so
+system/lib64/libaptXHD_encoder.so
+
+# APNs
+system/etc/apns-conf.xml:product/etc/apns-conf.xml
