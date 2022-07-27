@@ -103,7 +103,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworkResOverlay
+    FrameworkResOverlay \
+    TelephonyOverlay
 
 # System prop
 -include $(DEVICE_PATH)/system_prop.mk
