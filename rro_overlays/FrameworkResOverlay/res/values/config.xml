@@ -169,6 +169,12 @@
     <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
      <bool name="config_supportAudioSourceUnprocessed">false</bool>
 
+    <!-- Flag indicating whether the surface flinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where not
+         strictly needed. -->
+    <bool name="config_sf_limitedAlpha">true</bool>
+
     <!-- Whether device supports double tap to wake -->
      <bool name="config_supportDoubleTapWake">false</bool>
 
