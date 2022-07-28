@@ -199,6 +199,10 @@
          phone object irrespective of this config -->
      <bool name="config_switch_phone_on_voice_reg_state_change">true</bool>
 
+    <!-- Amount of time in ms the user needs to press the relevant keys to trigger the
+         screenshot chord -->
+    <integer name="config_screenshotChordKeyTimeout">0</integer>
+
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
      <bool name="config_unplugTurnsOnScreen">false</bool>
 
