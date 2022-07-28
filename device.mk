@@ -109,7 +109,8 @@ PRODUCT_PACKAGES += \
     TelephonyOverlay \
     DialerOverlay \
     SettingsProviderOverlay \
-    DocumentsUIOverlay
+    DocumentsUIOverlay \
+    SystemUIOverlay
 
 # System prop
 -include $(DEVICE_PATH)/system_prop.mk
