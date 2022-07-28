@@ -69,6 +69,13 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
+# Camera
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/permissions/privapp-permissions-camera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-camera.xml
+
+PRODUCT_PACKAGES += \
+    Camera
+    
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
