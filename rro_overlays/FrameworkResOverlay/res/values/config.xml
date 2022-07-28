@@ -203,6 +203,9 @@
          screenshot chord -->
     <integer name="config_screenshotChordKeyTimeout">0</integer>
 
+    <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
+    <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
+
     <!-- Control whether Night display is available. This should only be enabled on devices
     that have a HWC implementation that can apply the matrix passed to setColorTransform
     without impacting power, performance, and app compatibility (e.g. protected content). -->
