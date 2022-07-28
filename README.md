@@ -1,8 +1,10 @@
-The Realme Pad Volte (codenamed _"RMP2102"_) is an entry-level tablet from Realme announced in September 2021.
+The Realme Pad VoLTE/WiFi (codenamed _"RMP2102/RMP2103"_) is an entry-level tablet from Realme announced in September 2021.
+
+Both Devices Are Unifed As (codenamed _"RMP6768"_)
 
 ## Device specifications
 
-| Device                  | Realme Pad Volte                                         |
+| Device                  | Realme Pad VoLTE/WiFi                                       |
 | ----------------------- | :---------------------------------------------------------- |
 | SoC                     | MediaTek Helio G80 (12nm)                                   |
 | CPU                     | 2 x 2.0 GHz Cortex-A75 & 6 x 1.8 GHz Cortex-A55             |
