@@ -9,21 +9,21 @@ etc/apns-conf.xml:product/etc/apns-conf.xml
 lib/libstagefright_omx.so:product/vendor_overlay/30/lib/libstagefright_omx.so
 lib/libstagefright_omx_utils.so:product/vendor_overlay/30/lib/libstagefright_omx_utils.so
 lib64/libstagefright_omx.so:product/vendor_overlay/30/lib64/libstagefright_omx.so
+lib64/libstagefright_omx_utils.so:product/vendor_overlay/30/lib64/libstagefright_omx_utils.so
 
 # MTK-IMS
+bin/vtservice
+etc/init/init.vtservice.rc
+etc/permissions/privapp-permissions-mediatek.xml
 -framework/mediatek-common.jar
 -framework/mediatek-framework.jar
 -framework/mediatek-ims-base.jar
 -framework/mediatek-ims-common.jar
+framework/mediatek-ims-extension-plugin.jar
+framework/mediatek-ims-legacy.jar
 -framework/mediatek-telecom-common.jar
 -framework/mediatek-telephony-base.jar
 -framework/mediatek-telephony-common.jar
--priv-app/ImsService/ImsService.apk
-bin/vtservice
-etc/init/init.vtservice.rc
-etc/permissions/privapp-permissions-mediatek.xml
-framework/mediatek-ims-extension-plugin.jar
-framework/mediatek-ims-legacy.jar
 lib/libcomutils.so
 lib/libimsma.so
 lib/libimsma_adapt.so
@@ -31,27 +31,28 @@ lib/libimsma_rtp.so
 lib/libimsma_socketwrapper.so
 lib/libmtk_vt_service.so
 lib/libmtk_vt_wrapper.so
-lib/libmtkaudio_utils.so
+lib/libmtkaudio_utils.so|eabf125db15c0f236f3fd14c478862618d96113d
 lib/libmtkavenhancements.so
-lib/libmtklimiter.so
+lib/libmtklimiter.so|2dc775d3a8a8ea20b06d384fed5164c3ee2308e9
 lib/libmtkperf_client.so
-lib/libmtkshifter.so
+lib/libmtkshifter.so|eee0806149e034a32589d59fdabded74c8432ea0
 lib/libsignal.so
 lib/libsink.so
 lib/libsource.so
 lib/libvcodec_cap.so
 lib/libvcodec_capenc.so
 lib/libvt_avsync.so
-lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 lib64/libmtk_vt_wrapper.so
-lib64/libmtkaudio_utils.so
+lib64/libmtkaudio_utils.so|1748f2978b214ada733f3ada1becc0251e8acadf
 lib64/libmtkavenhancements.so
-lib64/libmtklimiter.so
+lib64/libmtklimiter.so|084e5b8bf153898d08aa0cb030d7afe8a72041f7
 lib64/libmtkperf_client.so
-lib64/libmtkshifter.so
+lib64/libmtkshifter.so|285ac64f9412b0ec70579c0408a6eca6e2d0de25
 lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
-lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+-priv-app/ImsService/ImsService.apk|507339fe8c88855296e98a64fc06ef044ca2468a
 
 # Kernel Power Off Charging (KPOC)
 bin/kpoc_charger
