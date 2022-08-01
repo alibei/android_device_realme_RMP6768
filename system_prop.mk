@@ -14,6 +14,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1
 
+# ZRAM
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.zram.mark_idle_delay_mins=60 \
+    ro.zram.first_wb_delay_mins=1440 \
+    ro.zram.periodic_wb_delay_hours=24
+
 # Performance
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.mtk_perf_simple_start_win=1 \
