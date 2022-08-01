@@ -9,23 +9,6 @@ etc/apns-conf.xml:product/etc/apns-conf.xml
 lib/libstagefright_omx.so:product/vendor_overlay/30/lib/libstagefright_omx.so
 lib/libstagefright_omx_utils.so:product/vendor_overlay/30/lib/libstagefright_omx_utils.so
 lib64/libstagefright_omx.so:product/vendor_overlay/30/lib64/libstagefright_omx.so
-lib64/libstagefright_omx_utils.so:product/vendor_overlay/30/lib64/libstagefright_omx_utils.so
-
-# Kernel Modules
-vendor/lib/modules/bt_drv.ko:product/vendor_overlay/30/lib/modules/bt_drv.ko
-vendor/lib/modules/fmradio_drv.ko:product/vendor_overlay/30/lib/modules/fmradio_drv.ko
-vendor/lib/modules/fpsgo.ko:product/vendor_overlay/30/lib/modules/fpsgo.ko
-vendor/lib/modules/gps_drv.ko:product/vendor_overlay/30/lib/modules/gps_drv.ko
-vendor/lib/modules/kheaders.ko:product/vendor_overlay/30/lib/modules/kheaders.ko
-vendor/lib/modules/met.ko:product/vendor_overlay/30/lib/modules/met.ko
-vendor/lib/modules/modules.alias:product/vendor_overlay/30/lib/modules/modules.alias
-vendor/lib/modules/modules.dep:product/vendor_overlay/30/lib/modules/modules.dep
-vendor/lib/modules/modules.load:product/vendor_overlay/30/lib/modules/modules.load
-vendor/lib/modules/modules.softdep:product/vendor_overlay/30/lib/modules/modules.softdep
-vendor/lib/modules/udc_lib.ko:product/vendor_overlay/30/lib/modules/udc_lib.ko
-vendor/lib/modules/wlan_drv_gen4m.ko:product/vendor_overlay/30/lib/modules/wlan_drv_gen4m.ko
-vendor/lib/modules/wmt_chrdev_wifi.ko:product/vendor_overlay/30/lib/modules/wmt_chrdev_wifi.ko
-vendor/lib/modules/wmt_drv.ko:product/vendor_overlay/30/lib/modules/wmt_drv.ko
 
 # MTK-IMS
 -framework/mediatek-common.jar
