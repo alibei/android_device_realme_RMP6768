@@ -1,4 +1,4 @@
-package org.lineageos.mediatek.incallservice;
+package org.arrowos.mediatek.incallservice;
 
 import android.content.BroadcastReceiver;
 import android.content.Intent;

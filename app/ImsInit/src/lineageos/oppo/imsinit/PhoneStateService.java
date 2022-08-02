@@ -1,4 +1,4 @@
-package org.lineageos.oppo.imsinit;
+package org.arrowos.oppo.imsinit;
 
 import android.app.Service;
 import android.content.Context;

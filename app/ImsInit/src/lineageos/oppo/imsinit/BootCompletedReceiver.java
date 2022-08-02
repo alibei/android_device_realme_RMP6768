@@ -1,4 +1,4 @@
-package org.lineageos.oppo.imsinit;
+package org.arrowos.oppo.imsinit;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
