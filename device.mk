@@ -187,6 +187,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
+# Kernel
+LOCAL_KERNEL := device/realme/RMP6768-kernel/Image.gz
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
+# Kernel headers
+PRODUCT_VENDOR_KERNEL_HEADERS += device/realme/RMP6768-kernel/kernel-headers
+
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster4.vendor \
