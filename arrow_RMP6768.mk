@@ -24,6 +24,9 @@ $(call inherit-product, vendor/arrow/config/common.mk)
 # Inherit from RMP6768 device
 $(call inherit-product, device/realme/RMP6768/device.mk)
 
+# ArrowOS Specific Flags
+ARROW_GAPPS := true
+
 PRODUCT_DEVICE := RMP6768
 PRODUCT_NAME := arrow_RMP6768
 PRODUCT_BRAND := Realme
