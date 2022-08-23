@@ -10,10 +10,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 
-# Blurs
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.surface_flinger.supports_background_blur=1
-
 # ZRAM
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.zram.mark_idle_delay_mins=60 \
@@ -36,7 +32,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
+    ro.surface_flinger.running_without_sync_framework=true
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
