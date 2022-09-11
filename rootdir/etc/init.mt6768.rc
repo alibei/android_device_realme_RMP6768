@@ -36,6 +36,8 @@ service debug_roottree /system/bin/sh -c "ls -la / > /data/debug.roottree.txt"
 on property:sys.boot_completed=1
     # OTG
     write /sys/class/power_supply/usb/otg_switch 1
+    # EAS
+    write /sys/devices/system/cpu/eas/enable 1
 
     # switch to schedutil
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
