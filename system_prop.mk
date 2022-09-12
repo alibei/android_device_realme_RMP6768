@@ -118,3 +118,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     pm.dexopt.first-boot=quicken \
     pm.dexopt.bg-dexopt=everything
+
+# Bluetooth
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.device.class_of_device=90,2,12
