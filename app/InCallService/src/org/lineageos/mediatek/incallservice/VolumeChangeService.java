@@ -1,4 +1,4 @@
-package org.arrowos.mediatek.incallservice;
+package org.lineageos.mediatek.incallservice;
 
 import android.media.AudioManager;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.arrowos.mediatek.incallservice"
+    package="org.lineageos.mediatek.incallservice"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -11,7 +11,7 @@
         <receiver
             android:directBootAware="true"
             android:exported="true"    
-            android:name="org.arrowos.mediatek.incallservice.OnLockedBootCompleteReceiver">
+            android:name="org.lineageos.mediatek.incallservice.OnLockedBootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -19,7 +19,7 @@
         </receiver>
         <service
             android:directBootAware="true"
-            android:name="org.arrowos.mediatek.incallservice.VolumeChangeService">
+            android:name="org.lineageos.mediatek.incallservice.VolumeChangeService">
         </service>
     </application>
 </manifest>
