@@ -48,11 +48,11 @@ function blob_fixup {
         vendor/lib64/libwifi-hal-mtk.so)
             "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
             ;;
-        vendor/lib64/libmtkcam_stdutils.so)
+        vendor/lib*/libmtkcam_stdutils.so)
             "$PATCHELF" --replace-needed "libutils.so" "libutils-v30.so" "$2"
             ;;
         vendor/lib*/hw/audio.primary.mt6768.so)
-            "$PATCHELF" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "$2"
+            "$PATCHELF" --add-needed "libshim_audio.so" "$2"
             "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils_legacy.so" "$2"
             ;;
         vendor/lib*/hw/audio.usb.mt6768.so)
