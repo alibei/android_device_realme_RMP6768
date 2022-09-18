@@ -88,3 +88,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.ime.kb_pad_port_b=1 \
     ro.com.google.ime.corner_key_r=35
+
+# Hardware Acceleration
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    video.accelerate.hw=1 \
+    debug.sf.hw=1 \
+    debug.performance.tuning=1 \
+    debug.egl.profiler=1 \
+    debug.egl.hw=1 \
+    debug.composition.type=gpu
