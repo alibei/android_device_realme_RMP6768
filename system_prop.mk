@@ -83,3 +83,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.soc.manufacturer=Mediatek \
     ro.soc.model=MT6768
+
+# GBoard
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.ime.kb_pad_port_b=1 \
+    ro.com.google.ime.corner_key_r=35
