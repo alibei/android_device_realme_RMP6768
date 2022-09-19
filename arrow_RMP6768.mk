@@ -25,6 +25,7 @@ $(call inherit-product, vendor/arrow/config/common.mk)
 $(call inherit-product, device/realme/RMP6768/device.mk)
 
 # ArrowOS Specific Flags
+TARGET_SUPPORTS_QUICK_TAP := true
 ARROW_GAPPS := true
 
 PRODUCT_DEVICE := RMP6768
