@@ -36,7 +36,10 @@ PRODUCT_COPY_FILES += \
 # Copy fstab
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor_overlay/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
-    
+
+# Parts
+$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
@@ -50,7 +53,7 @@ PRODUCT_PACKAGES += \
     libhardware \
     libhidltransport \
     libhwbinder
-    
+
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -75,7 +78,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     Camera
-    
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -149,7 +152,6 @@ PRODUCT_PACKAGES += \
     libshim_vtservice \
     libshim_showlogo
 
-    
 PRODUCT_PACKAGES += \
     ImsServiceBase
 
