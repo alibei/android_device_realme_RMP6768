@@ -1,9 +1,9 @@
 # Zygote
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
 
 # Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bluetooth_audio_hal.disabled=true \
     persist.bluetooth.a2dp_offload.disabled=true \
     ro.bluetooth.a2dp_offload.supported=false
@@ -13,33 +13,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.fuse.transcode_default=false
 
 # Iorap
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 
 # ZRAM
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     ro.zram.mark_idle_delay_mins=60 \
     ro.zram.first_wb_delay_mins=1440 \
     ro.zram.periodic_wb_delay_hours=24
 
 # Performance
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     ro.mtk_perf_simple_start_win=1 \
     ro.mtk_perf_fast_start_win=1 \
     ro.mtk_perf_response_time=1
 
-# Media
-PRODUCT_PRODUCT_PROPERTIES += \
-    media.stagefright.thumbnail.prefer_hw_codecs=true \
-    debug.stagefright.ccodec=0
-
 # Surfaceflinger
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.running_without_sync_framework=true \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
-    ro.surface_flinger.running_without_sync_framework=true
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -49,14 +44,16 @@ PRODUCT_PRODUCT_PROPERTIES += \
     vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
 
 # IMS
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.ims_volte_enable=1 \
     persist.radio.rat_on=combine \
     persist.radio.data_ltd_sys_ind=1 \
     persist.radio.data_con_rprt=1 \
-    persist.radio.calls.on.ims=1
+    persist.radio.calls.on.ims=1 \
+    persist.vendor.vilte_support=0 \
+    persist.vendor.mtk.vilte.enable=0
 
 # Encryption
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -80,13 +77,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0
 
 # OMX
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     debug.stagefright.omx_default_rank=0 \
     debug.stagefright.ccodec=0
 
 # SOC
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     ro.soc.manufacturer=Mediatek \
     ro.soc.model=MT6768
 
@@ -96,7 +94,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.ime.corner_key_r=35
 
 # Hardware Acceleration
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     video.accelerate.hw=1 \
     debug.sf.hw=1 \
     debug.performance.tuning=1 \
@@ -115,3 +113,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.dha_th_rate=2.3 \
     ro.config.sdha_apps_bg_max=64 \
     ro.config.sdha_apps_bg_min=8
+
+# Dexopt
+PRODUCT_SYSTEM_PROPERTIES += \
+    pm.dexopt.first-boot=quicken \
+    pm.dexopt.bg-dexopt=everything
