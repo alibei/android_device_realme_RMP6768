@@ -35,7 +35,7 @@ PRODUCT_COPY_FILES += \
 
 # Copy fstab
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/vendor_overlay/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768
+    $(DEVICE_PATH)/vendor_overlay/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/system/etc/fstab.mt6768
 
 # Parts
 $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
