@@ -13,8 +13,6 @@ on post-fs-data
     stop console
 
 on property:sys.boot_completed=1
-    # OTG
-    write /sys/class/power_supply/usb/otg_switch 1
     # EAS
     write /sys/devices/system/cpu/eas/enable 1
 
