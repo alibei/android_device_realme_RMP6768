@@ -40,10 +40,6 @@ PRODUCT_COPY_FILES += \
 # Parts
 $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.RMP6768
