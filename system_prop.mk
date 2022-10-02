@@ -2,16 +2,6 @@
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
 
-# Bluetooth
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bluetooth_audio_hal.disabled=true \
-    persist.bluetooth.a2dp_offload.disabled=true \
-    ro.bluetooth.a2dp_offload.supported=false
-
-# Media Transcoding
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.fuse.transcode_default=false
-
 # Iorap
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=true
