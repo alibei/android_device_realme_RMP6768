@@ -4,7 +4,13 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-     persist.bluetooth.bluetooth_audio_hal.disabled=true
+    persist.bluetooth.bluetooth_audio_hal.disabled=true \
+    persist.bluetooth.a2dp_offload.disabled=true \
+    ro.bluetooth.a2dp_offload.supported=false
+
+# Media Transcoding
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.fuse.transcode_default=false
 
 # Iorap
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -26,7 +32,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
     debug.stagefright.ccodec=0
-    
+
 # Surfaceflinger
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
@@ -68,7 +74,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.camera.sound.forced=0 \
     ro.audio.silent=0 \
     ro.config.vc_call_vol_steps=9
-    
+
 # ADB
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0
