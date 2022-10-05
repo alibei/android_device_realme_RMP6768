@@ -98,8 +98,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mt6768.rc \
-    init.recovery.mt6768.sh \
-    init.safailnet.rc \
+    init.safailnet.rc
 
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
