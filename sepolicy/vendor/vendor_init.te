@@ -1,2 +1,4 @@
 # Allow vendor_init to write touchpanel nodes
 allow vendor_init proc_tp:file rw_file_perms;
+
+set_prop(vendor_init, vendor_mtk_powerhal_prop)
