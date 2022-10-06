@@ -13,10 +13,6 @@
   },
   {
     "repository": "neilchetty/android_prebuilts_clang_host_linux-x86_clang-6443078",
-    "target_path": "prebuilts/clang/host/linux-x86/clang-6443078"
-  },
-  {
-    "repository": "neilchetty/android_packages_apps_RealmeParts",
-    "target_path": "packages/apps/RealmeParts"
+    "target_path": "prebuilts/clang/host/linux-x86/clang"
   }
 ]
