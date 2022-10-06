@@ -1,0 +1,4 @@
+on boot
+	chown system system /sys/class/power_supply/usb/otg_switch
+	chown system system /proc/touchpanel/double_tap_enable
+	
