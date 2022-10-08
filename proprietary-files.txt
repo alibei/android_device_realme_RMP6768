@@ -52,7 +52,7 @@ lib64/libmtkshifter.so|285ac64f9412b0ec70579c0408a6eca6e2d0de25
 lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
--priv-app/ImsService/ImsService.apk|507339fe8c88855296e98a64fc06ef044ca2468a
+-priv-app/ImsService/ImsService.apk|34b476377b6062f945d5ccf7355b805ab8005fcd
 
 # Kernel Power Off Charging (KPOC)
 bin/kpoc_charger
