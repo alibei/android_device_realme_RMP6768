@@ -130,3 +130,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.bluetooth.system_audio_hal.enabled=1
+
+# Silence Log Spam
+ifeq (eng,$(TARGET_BUILD_VARIANT))
+VENDOR_LOG_LEVEL=I
+else
+VENDOR_LOG_LEVEL=S
+endif
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.log.tag.gralloc4=$(VENDOR_LOG_LEVEL)
