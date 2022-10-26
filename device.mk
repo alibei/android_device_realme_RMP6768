@@ -201,6 +201,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
 
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/publiclibraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Log Spams
 -include $(DEVICE_PATH)/configs/props/vendor_logging_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
