@@ -128,9 +128,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.pbap.server.enabled?=true \
     bluetooth.profile.sap.server.enabled?=true
 
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.bluetooth.system_audio_hal.enabled=1
-
 # Silence Log Spam
 ifeq (eng,$(TARGET_BUILD_VARIANT))
 VENDOR_LOG_LEVEL=I
