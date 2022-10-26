@@ -211,6 +211,31 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.2.vendor
 
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio@6.0.vendor \
+    android.hardware.audio.service \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.common-util.vendor \
+    android.hardware.audio.common@6.0-util.vendor \
+    android.hardware.audio@6.0-util \
+    android.hardware.audio@6.0-util.vendor
+
+PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    libaudiopreprocessing \
+    libtinycompress \
+    libtinyxml \
+    libnbaio_mono
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth.audio-impl
+
 # Neutral Networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.0.vendor \
