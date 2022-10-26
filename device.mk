@@ -35,7 +35,7 @@ $(call inherit-product, $(DEVICE_PATH)/apps/RealmeParts/parts.mk)
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.RMP6768
+    android.hardware.light-service.RMP6768
 
 # HIDL
 PRODUCT_PACKAGES += \
