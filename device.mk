@@ -133,6 +133,16 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     androidx.window.extensions
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0 \
+    android.hardware.sensors@1.0.vendor \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    android.hardware.sensors@2.0.vendor \
+    android.frameworks.sensorservice@1.0 \
+    libsensorndkbridge
+    
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v30.so \
