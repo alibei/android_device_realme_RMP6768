@@ -179,3 +179,6 @@ SELINUX_IGNORE_NEVERALLOWS := true
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+
+# Wifi
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
