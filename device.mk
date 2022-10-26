@@ -212,6 +212,18 @@ PRODUCT_PACKAGES += \
     libdrm.vendor \
     libdrm
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-resources \
+    android.hardware.graphics.composer@2.1-resources.vendor \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service
+
+PRODUCT_PACKAGES += \
+    libhwc2onfbadapter.vendor \
+    libvulkan \
+    disable_configstore
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v30.so \
