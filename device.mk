@@ -133,6 +133,12 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     androidx.window.extensions
 
+# Soundtrigger
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.3.vendor \
+    android.hardware.soundtrigger@2.0-core \
+    android.hardware.soundtrigger@2.3-impl
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0.vendor \
