@@ -37,19 +37,11 @@ $(call inherit-product, $(DEVICE_PATH)/apps/RealmeParts/parts.mk)
 PRODUCT_PACKAGES += \
     android.hardware.light-service.RMP6768
 
-# HIDL
-PRODUCT_PACKAGES += \
-    libhardware \
-    libhidltransport \
-    libhwbinder
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 # Screen density
-PRODUCT_AAPT_CONFIG := xxxhdpi
-PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 TARGET_SCREEN_DENSITY := 240
 
 # Dex
