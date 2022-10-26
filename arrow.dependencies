@@ -13,6 +13,6 @@
   },
   {
     "repository": "neilchetty/android_prebuilts_clang_host_linux-x86_clang-6443078",
-    "target_path": "prebuilts/clang/host/linux-x86/clang"
+    "target_path": "prebuilts/clang/host/linux-x86/clang-6443078"
   }
 ]
