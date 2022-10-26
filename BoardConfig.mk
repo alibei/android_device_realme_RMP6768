@@ -176,3 +176,6 @@ VENDOR_SECURITY_PATCH := 2022-09-05
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 SELINUX_IGNORE_NEVERALLOWS := true
+
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
