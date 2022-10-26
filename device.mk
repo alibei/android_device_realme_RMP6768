@@ -168,6 +168,19 @@ PRODUCT_COPY_FILES += \
 -include $(DEVICE_PATH)/configs/props/vendor_logging_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
+# RootDir
+PRODUCT_PACKAGES += \
+    init.connectivity.rc \
+    init.recovery.mt6768.rc \
+    init.safailnet.rc \
+    init.modem.rc \
+    init.mt6768.rc \
+    init.mt6768.usb.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    ueventd.mtk.rc \
+    fstab.mt6768
+
 # Fastboot
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
