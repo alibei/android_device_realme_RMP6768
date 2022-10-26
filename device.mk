@@ -197,6 +197,21 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0 \
     libsensorndkbridge
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4-service.clearkey \
+    android.hardware.drm@1.0.vendor \
+    android.hardware.drm@1.1.vendor \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.3.vendor
+
+PRODUCT_PACKAGES += \
+    libdrmclearkeyplugin.vendor \
+    libmockdrmcryptoplugin.vendor \
+    libclearkeycasplugin.vendor \
+    libdrm.vendor \
+    libdrm
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v30.so \
