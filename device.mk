@@ -238,6 +238,11 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@1.0-impl
+
 # Tablet Specific
 PRODUCT_PACKAGES += \
     androidx.window.extensions
