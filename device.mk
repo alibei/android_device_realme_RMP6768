@@ -25,24 +25,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Call proprietary blob setup
 $(call inherit-product, vendor/realme/RMP6768/RMP6768-vendor.mk)
 
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
-
-# VNDK
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
+# Product Details
 PRODUCT_SHIPPING_API_LEVEL := 30
-
-# Vendor overlay
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/vendor_overlay/,$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_EXTRA_VNDK_VERSIONS)/)
-
-# Copy fstab
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/vendor_overlay/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768 \
-    $(DEVICE_PATH)/vendor_overlay/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt8786
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Parts
-$(call inherit-product, $(DEVICE_PATH)/app/RealmeParts/parts.mk)
+$(call inherit-product, $(DEVICE_PATH)/apps/RealmeParts/parts.mk)
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -53,10 +42,6 @@ PRODUCT_PACKAGES += \
     libhardware \
     libhidltransport \
     libhwbinder
-
-# Dynamic Partition
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -74,7 +59,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/permissions/privapp-permissions-camera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-camera.xml
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-camera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-camera.xml
 
 PRODUCT_PACKAGES += \
     Camera
@@ -86,22 +71,9 @@ PRODUCT_PACKAGES += \
 # A/B
 AB_OTA_UPDATER := false
 
-# Freeform Multiwindow
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.freeform_window_management.xml
-
-# Recovery
-PRODUCT_PACKAGES += \
-    init.recovery.mt6768.rc
-
 # ImsInit hack
 PRODUCT_PACKAGES += \
     ImsInit
-
-# Init
-PRODUCT_PACKAGES += \
-    init.mt6768.rc \
-    init.safailnet.rc
 
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
@@ -117,15 +89,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlay \
     TelephonyOverlay \
-    DialerOverlay \
     SettingsProviderOverlay \
     DocumentsUIOverlay \
     SystemUIOverlay \
     SettingsOverlay
-
-# System prop
--include $(DEVICE_PATH)/system_prop.mk
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Telephony Jars
 PRODUCT_BOOT_JARS += \
@@ -144,7 +111,7 @@ PRODUCT_PACKAGES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
 
 # Symbols
 PRODUCT_PACKAGES += \
