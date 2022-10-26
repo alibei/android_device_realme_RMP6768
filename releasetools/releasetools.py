@@ -32,8 +32,9 @@ def AddImage(info, basename, dest):
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
 
 def OTA_InstallEnd(info):
-  info.script.Print("Flashing dtbo and vbmeta")
+  info.script.Print("Flashing Firmware Images")
   AddImage(info, "dtbo.img", "/dev/block/platform/bootdevice/by-name/dtbo")
   AddImage(info, "vbmeta.img", "/dev/block/platform/bootdevice/by-name/vbmeta")
   AddImage(info, "vbmeta_system.img", "/dev/block/platform/bootdevice/by-name/vbmeta_system")
+  AddImage(info, "vbmeta_vendor.img", "/dev/block/platform/bootdevice/by-name/vbmeta_vendor")
   return
