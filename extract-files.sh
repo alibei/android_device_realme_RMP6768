@@ -39,8 +39,30 @@ function blob_fixup {
         lib/libsink.so)
             "$PATCHELF" --add-needed "libshim_vtservice.so" "$2"
             ;;
-        lib/libshowlogo.so)
-            "$PATCHELF" --add-needed "libshim_showlogo.so" "$2"
+        vendor/lib*/libudf.so)
+            "$PATCHELF" --replace-needed "libunwindstack.so" "libunwindstack-v30.so" "$2"
+            ;;
+        vendor/lib*/libmtkcam_stdutils.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v30.so" "$2"
+            ;;
+        vendor/lib*/hw/audio.primary.mt6768.so)
+            "$PATCHELF" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "$2"
+            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils-v30.so" "$2"
+            ;;
+        vendor/lib*/hw/audio.usb.mt6768.so)
+            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils-v30.so" "$2"
+            ;;
+        vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
+            "$PATCHELF" --replace-needed android.hardware.power-V1-ndk_platform.so android.hardware.power-V2-ndk.so "$2"
+            ;;
+        vendor/lib*/hw/dfps.mt6768.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+            ;;
+        vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+            ;;
+        vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc)
+            sed -i '/vts/Q' "$2"
             ;;
     esac
 }
