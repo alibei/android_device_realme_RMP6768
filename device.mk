@@ -242,6 +242,11 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0 \
     libsensorndkbridge
 
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
