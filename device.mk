@@ -133,6 +133,20 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     androidx.window.extensions
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.0.vendor \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio@1.0.vendor \
+    android.hardware.radio@1.1.vendor \
+    android.hardware.radio@1.2.vendor \
+    android.hardware.radio@1.3.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio@1.6.vendor
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0 \
@@ -142,7 +156,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0.vendor \
     android.frameworks.sensorservice@1.0 \
     libsensorndkbridge
-    
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v30.so \
