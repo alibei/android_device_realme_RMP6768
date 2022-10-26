@@ -114,10 +114,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ImsServiceBase
 
-# MTKInCallService
-PRODUCT_PACKAGES += \
-    MtkInCallService
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
