@@ -174,4 +174,5 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 VENDOR_SECURITY_PATCH := 2022-09-05
 
 # Sepolicy
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
 SELINUX_IGNORE_NEVERALLOWS := true
