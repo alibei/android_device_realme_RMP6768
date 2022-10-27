@@ -155,6 +155,8 @@ void vendor_load_properties()
 
     #ifdef __ANDROID_RECOVERY__
     std::string buildtype = GetProperty("ro.build.type", "userdebug");
+    property_override("ro.product.device", "RMP6768");
+    property_override("ro.build.product", "RMP6768");
     if (buildtype != "user") {
         property_override("ro.debuggable", "1");
         property_override("ro.adb.secure.recovery", "0");
