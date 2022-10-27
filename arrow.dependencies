@@ -1,18 +1,18 @@
 [
   {
-    "repository": "neilchetty/android_device_realme_RMP6768",
+    "repository": "android_device_realme_RMP6768",
     "target_path": "device/realme/RMP6768"
   },
   {
-    "repository": "neilchetty/android_vendor_realme_RMP6768",
+    "repository": "android_vendor_realme_RMP6768",
     "target_path": "vendor/realme/RMP6768"
   },
   {
-    "repository": "neilchetty/android_kernel_realme_RMP6768",
+    "repository": "android_kernel_realme_RMP6768",
     "target_path": "kernel/realme/RMP6768"
   },
   {
-    "repository": "neilchetty/android_prebuilts_clang_host_linux-x86_clang-6443078",
-    "target_path": "prebuilts/clang/host/linux-x86/clang-6443078"
+    "repository": "android_prebuilts_clang_host_linux-x86_clang-r437112",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-r437112"
   }
 ]
