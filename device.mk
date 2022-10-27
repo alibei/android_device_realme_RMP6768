@@ -30,9 +30,6 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
-# Parts
-$(call inherit-product, $(DEVICE_PATH)/apps/RealmeParts/parts.mk)
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.RMP6768
