@@ -57,10 +57,6 @@ PRODUCT_PACKAGES += \
 # A/B
 AB_OTA_UPDATER := false
 
-# ImsInit hack
-PRODUCT_PACKAGES += \
-    ImsInit
-
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
 
@@ -99,9 +95,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_vtservice \
     libshim_showlogo
-
-PRODUCT_PACKAGES += \
-    ImsServiceBase
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
