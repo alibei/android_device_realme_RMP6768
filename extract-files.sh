@@ -39,6 +39,9 @@ function blob_fixup {
         lib/libsink.so)
             "$PATCHELF" --add-needed "libshim_vtservice.so" "$2"
             ;;
+        lib/libshowlogo.so)
+            "${PATCHELF}" --add-needed "libshim_showlogo.so" "${2}"
+            ;;
         vendor/lib*/libudf.so)
             "$PATCHELF" --replace-needed "libunwindstack.so" "libunwindstack-v30.so" "$2"
             ;;
