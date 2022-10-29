@@ -689,7 +689,6 @@ lib64/libstagefright_omx.so:vendor/lib64/libstagefright_omx.so
 lib64/libstagefright_omx_utils.so:vendor/lib64/libstagefright_omx_utils.so
 vendor/lib/vndk/libstagefright_omx.so
 vendor/lib/libstagefright_soft_ac4dec.so
-vendor/lib/libstagefright_soft_mpeg2dec.so
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so
 
@@ -1532,7 +1531,6 @@ vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libssl-mdapp.so
 vendor/lib64/libstagefright_soft_ac4dec.so
 vendor/lib64/libstagefright_soft_ddpdec.so
-vendor/lib64/libstagefright_softomx.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libstrongswan.so
 vendor/lib64/libsysenv.so
