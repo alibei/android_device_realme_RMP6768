@@ -284,6 +284,8 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
+    audio_policy.stub \
+    libaudiofoundation.vendor \
     libaudiopreprocessing \
     libtinycompress \
     libtinyxml \
@@ -344,8 +346,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libdrmclearkeyplugin.vendor \
-    libmockdrmcryptoplugin.vendor \
     libclearkeycasplugin.vendor \
+    libmockdrmcryptoplugin \
     libdrm.vendor \
     libdrm
 
