@@ -27,13 +27,13 @@ $(call inherit-product, device/realme/RMP6768/device.mk)
 # ArrowOS Specific Flags
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_BOOTANIMATION_RES := 1080
-ARROW_GAPPS := true
+DEVICE_MAINTAINER := NeilChetty
 
 PRODUCT_DEVICE := RMP6768
 PRODUCT_NAME := arrow_RMP6768
 PRODUCT_BRAND := Realme
 PRODUCT_MANUFACTURER := Realme
-PRODUCT_MODEL := Pad
+PRODUCT_MODEL := Realme Pad
 
 # Build info
 BUILD_FINGERPRINT := "google/coral/coral:13/TP1A.221005.002/9012097:user/release-keys"
