@@ -25,9 +25,6 @@ on early-init
 on init
     write /proc/bootprof "INIT:init"
 
-    # if primary storage is physical, set ro.vold.primary_physical to 1
-    # setprop ro.vold.primary_physical 1
-
 # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
@@ -296,14 +293,9 @@ on post-fs-data
     chmod 444 /etc/radvd/radvd.conf
 
     # Mali 3D GPU driver
-    #insmod /vendor/lib/modules/mali.ko
     chmod 666 /dev/mali0
-    #chown system graphics /dev/mali
-
-
 
     # Touch Panel
-    # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
     chown root diag /sys/module/tpd_setting/parameters/tpd_mode
@@ -323,10 +315,7 @@ on post-fs-data
     chown root radio /dev/ptmx
 
     # M4U
-    #insmod /vendor/lib/modules/m4u.ko
-    #mknod /dev/M4U_device c 188 0
     chmod 0444 /dev/m4u
-    #chown system media /dev/M4U_device
     chmod 0640 /proc/m4u
     chown system media /proc/m4u
 
@@ -380,7 +369,6 @@ on post-fs-data
     chmod 0777 vendor/etc/key/.key
     chown system system vendor/etc/key/.key
 	
-
     # for smartpa_test
     mkdir /mnt/vendor/nvcfg/audio
     chmod 0777 /mnt/vendor/nvcfg/audio
@@ -457,10 +445,7 @@ on post-fs-data
     chown system system sys/bus/i2c/drivers/aw881xx_smartpa/6-0036/monitor
     chown system system sys/bus/i2c/drivers/aw881xx_smartpa/6-0037/monitor
 
-	
 	#aw88394
-	
-	
 	chmod 777 vendor/bin/aw_cali
     chown system system /sys/bus/i2c/drivers/aw883xx_smartpa
     chmod 0664 sys/bus/i2c/drivers/aw883xx_smartpa/6-0038/q
@@ -546,8 +531,6 @@ on post-fs-data
     mkdir /data/vendor/vcodec/out 0770 media system
 
     #MJC
-    #insmod /vendor/lib/modules/mjc_kernel_driver.ko
-    #mknod /dev/MJC c 168 0
     chmod 0660 /dev/MJC
     chown media system /dev/MJC
 
@@ -695,10 +678,6 @@ on post-fs-data
     #HDMI
     chown media system /dev/hdmitx
     chmod 0664 /dev/hdmitx
-
-
-    # JPEG
-    #chmod 0444 /dev/mtk_jpeg
 
     # almk
     chmod 0440 /dev/mtk_almk
@@ -1016,7 +995,7 @@ on boot
     chown system system /sys/power/dcm_state
     chmod 0660 /sys/power/dcm_state
 
-##Netlog tool
+# Netlog tool
    #change permissions about terminal
     chown root radio /proc/net/vlan/config
     chmod 0640 /proc/net/vlan/config
@@ -1050,7 +1029,7 @@ on boot
     chmod 660 /dev/ttyGS1
     chown system radio /dev/ttyGS1
 
-#Power Manager
+# Power Manager
     write /sys/power/pm_freeze_timeout 2000
 
 # end boot time fs tune
@@ -1096,40 +1075,6 @@ on property:sys.boot_completed=1
     # Stop bootprof
     write /proc/bootprof "0"
 
-#service dpfd /vendor/bin/dpfd
-#	user root
-#	group system media
-
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
-##Add by T.Zh for ppp daemon
-#service pppd /bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
-#
-#  Modem related services (End)
-#
-
-#add for power-off alarm
-#service poad /vendor/bin/poad
-#    class main
-#    user system
-#    group system
-#    oneshot
-
-#service BGW /vendor/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
-
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
     write /sys/devices/platform/battery_meter/FG_daemon_disable 1
@@ -1165,10 +1110,6 @@ on property:sys.boot_completed=1 && property:ro.boot.atm=enable
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
-
-# FPSGO FBT Game
-on boot
-    insmod /vendor/lib/modules/fpsgo.ko
 
 service key_check /vendor/bin/key_check
     class main
