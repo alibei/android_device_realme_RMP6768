@@ -46,9 +46,18 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
-# Camera
+# Camera (GCamGo or TeraCube)
+ifeq ($(ARROW_OFFICIAL), true)
+PRODUCT_PACKAGES += \
+    GCamGOPrebuilt
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-gcamgo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-gcamgo.xml
+else
 PRODUCT_PACKAGES += \
     Camera
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-teracube.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-teracube.xml
+endif
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -102,7 +111,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-camera.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-camera.xml \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
