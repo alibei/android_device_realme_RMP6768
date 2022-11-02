@@ -68,11 +68,11 @@ void vendor_load_properties()
     string sku;
 
     string region = GetProperty("ro.boot.product.regionmark", "");
-    string hwversion = GetProperty("ro.boot.hwversion", "");
+    string hw = GetProperty("ro.boot.hwversion", "");
 
     struct sysinfo sys;
     sysinfo(&sys);
-    if (hwversion == "1" || hwversion == "2") {
+    if (hw == "0" || hw == "1" || hw == "2") {
         model = "Realme Pad VoLTE";
         sku = "volte";
         if (region == "EEA") {
@@ -88,7 +88,7 @@ void vendor_load_properties()
             device = "RMP2102";
         }
     }
-    else if (hwversion == "3" || hwversion == "4") {
+    else if (hw == "3" || hw == "4" || hw == "5") {
         model = "Realme Pad WiFi";
         sku = "wifi";
         if (region == "EEA") {
