@@ -273,12 +273,18 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-util \
     android.hardware.audio@6.0-util.vendor
 
+
 PRODUCT_PACKAGES += \
+    audio_policy.stub \
     audio.bluetooth.default \
     audio.r_submix.default \
-    audio.usb.default \
-    audio_policy.stub \
+    audio.usb.default
+
+PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
+    libbundlewrapper \
+    libdownmix \
+    libalsautils \
     libaudiopreprocessing \
     libtinycompress \
     libtinyxml \
