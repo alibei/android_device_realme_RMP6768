@@ -2,7 +2,6 @@
 persist.adb.nonblocking_ffs=1
 
 # Audio
-ro.vendor.have_aeev_feature=1
 ro.vendor.mtk_audio_alac_support=1
 ro.vendor.mtk_audio_ape_support=1
 ro.vendor.mtk_audio_tuning_tool_ver=V2.2
