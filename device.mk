@@ -38,9 +38,6 @@ PRODUCT_PACKAGES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
-# Screen density
-TARGET_SCREEN_DENSITY := 240
-
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
@@ -280,7 +277,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.common@6.0-util.vendor \
     android.hardware.audio@6.0-util \
     android.hardware.audio@6.0-util.vendor
-
 
 PRODUCT_PACKAGES += \
     audio_policy.stub \
