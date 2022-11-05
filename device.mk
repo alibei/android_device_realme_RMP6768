@@ -426,7 +426,9 @@ PRODUCT_COPY_FILES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0 \
-    android.hidl.allocator@1.0.vendor
+    android.hidl.allocator@1.0.vendor \
+    android.hidl.memory.block@1.0 \
+    android.hidl.memory@1.0-impl
 
 # Binder
 PRODUCT_PACKAGES += \
