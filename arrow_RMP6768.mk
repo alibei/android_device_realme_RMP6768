@@ -36,7 +36,7 @@ PRODUCT_MANUFACTURER := Realme
 PRODUCT_MODEL := Realme Pad
 
 # Build info
-BUILD_FINGERPRINT := "google/coral/coral:13/TP1A.221005.002/9012097:user/release-keys"
+BUILD_FINGERPRINT := "google/sunfish/sunfish:13/TP1A.221105.002/9080065:user/release-keys"
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=RMP6768 \
     PRODUCT_NAME=RMP6768 \
