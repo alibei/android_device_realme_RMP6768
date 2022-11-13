@@ -36,6 +36,9 @@
     <!-- Default for Settings.Global.DEVICE_NAME $1=MANUFACTURER $2=MODEL-->
     <string name="def_device_name">Realme Pad</string>
 
+    <!-- Specify if auto rotate is on by default-->
+    <bool name="def_accelerometer_rotation">true</bool>
+
     <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
     <string name="def_device_name_simple">Realme Pad</string>
 
