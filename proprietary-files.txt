@@ -725,7 +725,6 @@ vendor/lib/libmtkcam_stdutils.so
 vendor/lib/libmtkcam_ulog.so
 vendor/lib/libmtkcutils.so
 vendor/lib/libmtkhardware_legacy.so
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
 vendor/lib/vendor.mediatek.hardware.dfps@1.0.so
@@ -827,7 +826,6 @@ vendor/lib64/libmtkconfigutils.so
 vendor/lib64/libmtkcutils.so
 vendor/lib64/libmtkhardware_legacy.so
 vendor/lib64/libmtkisp_metadata.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so
 vendor/lib64/libmtkrilutils.so
@@ -1523,7 +1521,6 @@ lib/libimsma_socketwrapper.so
 lib/libmtk_vt_service.so
 lib/libmtk_vt_wrapper.so
 lib/libmtkavenhancements.so
-lib/libmtkperf_client.so
 lib/libsignal.so
 lib/libsink.so
 lib/libsource.so
@@ -1533,7 +1530,6 @@ lib/libvsim-adaptor-client.so
 lib/libvt_avsync.so
 lib64/libmtk_vt_wrapper.so
 lib64/libmtkavenhancements.so
-lib64/libmtkperf_client.so
 lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
 lib64/libvsim-adaptor-client.so
