@@ -104,6 +104,9 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/mediatek \
     $(DEVICE_PATH)
 
 # Permissions
@@ -412,7 +415,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.example
+    android.hardware.power-service.mediatek-libperfmgr
 
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor \
@@ -427,6 +430,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.0.vendor \
     vendor.mediatek.hardware.mtkpower@1.1.vendor
+
+# Power Hint
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # HIDL
 PRODUCT_PACKAGES += \
