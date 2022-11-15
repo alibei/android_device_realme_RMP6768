@@ -342,22 +342,19 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor
 
 PRODUCT_PACKAGES += \
-    libdrmclearkeyplugin.vendor \
-    libclearkeycasplugin.vendor \
-    libmockdrmcryptoplugin \
-    libdrm.vendor \
-    libdrm
+    libmockdrmcryptoplugin
 
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-resources \
     android.hardware.graphics.composer@2.1-resources.vendor \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service
 
 PRODUCT_PACKAGES += \
-    libhwc2onfbadapter.vendor \
+    libhwc2onfbadapter \
     libvulkan \
+    libdrm.vendor \
+    libdrm \
     disable_configstore
 
 # Wifi
@@ -368,7 +365,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.3.vendor \
     android.hardware.wifi@1.4.vendor \
     android.hardware.wifi@1.5.vendor \
-    android.hardware.wifi@1.3-impl \
     android.hardware.wifi.hostapd@1.0.vendor \
     android.hardware.wifi.hostapd@1.1.vendor \
     android.hardware.wifi.hostapd@1.2.vendor \
