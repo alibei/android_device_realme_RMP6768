@@ -1,0 +1,2 @@
+# Allow vendor_init to write touchpanel nodes
+allow vendor_init proc_tp:file rw_file_perms;
