@@ -1,0 +1,2 @@
+# Audio Tuning Path
+set_prop(mtk_hal_audio, vendor_audio_tunning_prop)
