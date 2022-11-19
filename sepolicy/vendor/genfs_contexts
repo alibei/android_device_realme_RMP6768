@@ -21,3 +21,7 @@ genfscon sysfs /kernel/gpu/gpu_(min|max)_clock                                  
 
 # Graphics
 genfscon sysfs /devices/platform/13040000.mali                                                                    u:object_r:sysfs_mali:s0
+
+# OTG
+genfscon sysfs /class/power_supply/usb/otg_switch                                                                 u:object_r:sysfs_otg_switch:s0
+genfscon sysfs /devices/platform/charger/power_supply/usb/otg_switch                                              u:object_r:sysfs_otg_switch:s0
