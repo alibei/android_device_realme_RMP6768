@@ -1,2 +1,5 @@
 # Light
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.RMP6768                                                 u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.RMP6768                                                    u:object_r:hal_light_default_exec:s0
+
+# Audio
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service-mediatek                                                   u:object_r:mtk_hal_audio_exec:s0
