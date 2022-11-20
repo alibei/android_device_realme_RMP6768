@@ -209,7 +209,6 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 PRODUCT_PACKAGES += \
     init.connectivity.rc \
     init.recovery.mt6768.rc \
-    init.safailnet.rc \
     init.modem.rc \
     init.mt6768.rc \
     init.mt6768.usb.rc \
