@@ -154,6 +154,9 @@ ro.mediatek.wlan.p2p=1
 ro.mediatek.wlan.wsc=1
 ro.vendor.wlan.gen=gen4m
 
+# Zygote
+zygote.critical_window.minute=10
+
 # WiFi
 ro.vendor.mtk_sim_hot_swap_common_slot=1
 ro.vendor.wfd.dummy.enable=0
