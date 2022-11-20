@@ -6,3 +6,6 @@ set_prop(vendor_init, vendor_power_prop)
 
 # OTG
 allow vendor_init sysfs_otg_switch:file rw_file_perms;
+
+# VTS Status
+get_prop(vendor_init, vts_status_prop)

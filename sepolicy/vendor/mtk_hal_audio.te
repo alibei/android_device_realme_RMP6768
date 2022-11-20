@@ -1,2 +1,6 @@
 # Audio Tuning Path
 set_prop(mtk_hal_audio, vendor_audio_tunning_prop)
+
+# Pacalbrare
+allow mtk_hal_audio nvcfg_file:file rw_file_perms;
+allow mtk_hal_audio nvcfg_file:dir { open read search };
