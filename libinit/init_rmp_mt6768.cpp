@@ -144,6 +144,8 @@ void vendor_load_properties()
         heaptargetutilization = "0.75";
         heapminfree = "512k";
         heapmaxfree = "8m";
+        // Reduce memory footprint
+        property_override("ro.config.avoid_gfx_accel", "true");
     }
 
     property_override("dalvik.vm.heapstartsize", heapstartsize);
