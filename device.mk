@@ -360,7 +360,8 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.RMP6768 \
-    android.hardware.wifi.supplicant@1.3.vendor
+    android.hardware.wifi.supplicant@1.3.vendor \
+    hostapd
 
 # RenderScript
 PRODUCT_PACKAGES += \
