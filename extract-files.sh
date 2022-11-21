@@ -61,6 +61,9 @@ function blob_fixup {
         vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so)
             "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
+        vendor/lib64/libwifi-hal-mtk.so)
+            "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
+            ;;
         vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc)
             sed -i '/vts/Q' "$2"
             ;;
