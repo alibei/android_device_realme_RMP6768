@@ -12,8 +12,16 @@
     "target_path": "kernel/realme/RMP6768"
   },
   {
-    "repository": "android_packages_apps_GCamGOPrebuilt",
-    "target_path": "packages/apps/GCamGOPrebuilt"
+    "repository": "android_hardware_mediatek",
+    "target_path": "hardware/mediatek"
+  },
+  {
+    "repository": "vendor_mediatek_opensource_interfaces",
+    "target_path": "vendor/mediatek/opensource/interfaces"
+  },
+  {
+    "repository": "android_device_mediatek_sepolicy_vndr",
+    "target_path": "device/mediatek/sepolicy_vndr"
   },
   {
     "repository": "android_prebuilts_clang_host_linux-x86_clang-r437112",
