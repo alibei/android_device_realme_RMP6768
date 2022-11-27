@@ -66,21 +66,16 @@ AB_OTA_UPDATER := false
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
 
-# WiFi and IMS Overlays
-PRODUCT_PACKAGES += \
-    TetheringConfigOverlay \
-    WifiOverlay \
-    MtkIms \
-    MtkImsTelephony
-
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlay \
     TelephonyOverlay \
     SettingsProviderOverlay \
-    DocumentsUIOverlay \
     SystemUIOverlay \
-    SettingsOverlay
+    SettingsOverlay \
+    TetheringConfigOverlay \
+    CarrierConfigOverlay \
+    WifiOverlay
 
 # Telephony Jars
 PRODUCT_BOOT_JARS += \
