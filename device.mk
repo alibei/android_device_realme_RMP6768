@@ -196,9 +196,8 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
     $(DEVICE_PATH)/configs/seccomp/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
 
-# Log Spams
--include $(DEVICE_PATH)/configs/props/vendor_logging_prop.mk
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+# Vendor Log Tag
+include $(DEVICE_PATH)/configs/props/logtag.mk
 
 # RootDir
 PRODUCT_PACKAGES += \
