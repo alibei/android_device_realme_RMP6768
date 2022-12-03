@@ -35,13 +35,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.RMP6768
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
-
-# Dex
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Settings \
-    SystemUI
+TARGET_SCREEN_HEIGHT := 2000
+TARGET_SCREEN_WIDTH := 1200
 
 # Camera (GCamGo or TeraCube)
 ifeq ($(ARROW_OFFICIAL), true)
@@ -55,10 +50,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-teracube.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-teracube.xml
 endif
-
-# fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
 
 # A/B
 AB_OTA_UPDATER := false
@@ -90,6 +81,7 @@ PRODUCT_BOOT_JARS += \
 # RcsService
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
+    RcsService \
     PresencePolling
 
 # Symbols
