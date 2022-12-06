@@ -61,17 +61,57 @@ void property_override_triple(char const product_prop[], char const system_prop[
     property_override(vendor_prop, value);
 }
 
-void vendor_load_properties()
+void dalvik_load_properties()
 {
+    struct sysinfo sys;
+    sysinfo(&sys);
+    // Set dalvik heap configuration
+    string heapstartsize, heapgrowthlimit, heapsize, heapminfree,
+			heapmaxfree, heaptargetutilization;
+   if (sys.totalram > 5072ull * 1024 * 1024) {
+        // from - phone-xhdpi-6144-dalvik-heap.mk
+        heapstartsize = "16m";
+        heapgrowthlimit = "256m";
+        heapsize = "512m";
+        heaptargetutilization = "0.5";
+        heapminfree = "8m";
+        heapmaxfree = "32m";
+    } else if (sys.totalram > 3072ull * 1024 * 1024) {
+        // from - phone-xhdpi-4096-dalvik-heap.mk
+        heapstartsize = "8m";
+        heapgrowthlimit = "192m";
+        heapsize = "512m";
+        heaptargetutilization = "0.6";
+        heapminfree = "8m";
+        heapmaxfree = "16m";
+    } else {
+        // from - phone-xhdpi-2048-dalvik-heap.mk
+        heapstartsize = "8m";
+        heapgrowthlimit = "192m";
+        heapsize = "512m";
+        heaptargetutilization = "0.75";
+        heapminfree = "512k";
+        heapmaxfree = "8m";
+        // Reduce memory footprint
+        property_override("ro.config.avoid_gfx_accel", "true");
+    }
+    property_override("dalvik.vm.heapstartsize", heapstartsize);
+    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_override("dalvik.vm.heapsize", heapsize);
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
+    property_override("dalvik.vm.heapminfree", heapminfree);
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
+}
+
+void device_load_properties()
+{
+    struct sysinfo sys;
+    sysinfo(&sys);
     string model;
     string device;
     string sku;
-
     string region = GetProperty("ro.boot.product.regionmark", "");
     string hw = GetProperty("ro.boot.hwversion", "");
-
-    struct sysinfo sys;
-    sysinfo(&sys);
     if (hw == "0" || hw == "1" || hw == "2") {
         model = "Realme Pad VoLTE";
         sku = "volte";
@@ -104,6 +144,11 @@ void vendor_load_properties()
             device = "RMP2103"; 
         }
     }
+    else {
+        model = "Realme Pad";
+        sku = "unknown";
+        device = "RMP6768";
+    }
     // Override all partitions' props
     string prop_partitions[] = { "", "odm.", "product.", "system.",
 					"system_ext.", "bootimage.", "vendor." };
@@ -115,45 +160,12 @@ void vendor_load_properties()
     }
     // Set Product SKU
     property_override("ro.boot.product.hardware.sku", sku);
+}
 
-    // Set dalvik heap configuration
-    string heapstartsize, heapgrowthlimit, heapsize, heapminfree,
-			heapmaxfree, heaptargetutilization;
-
-    if (sys.totalram > 5072ull * 1024 * 1024) {
-        // from - phone-xhdpi-6144-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.5";
-        heapminfree = "8m";
-        heapmaxfree = "32m";
-    } else if (sys.totalram > 3072ull * 1024 * 1024) {
-        // from - phone-xhdpi-4096-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heaptargetutilization = "0.6";
-        heapminfree = "8m";
-        heapmaxfree = "16m";
-    } else {
-        // from - phone-xhdpi-2048-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heaptargetutilization = "0.75";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
-        // Reduce memory footprint
-        property_override("ro.config.avoid_gfx_accel", "true");
-    }
-
-    property_override("dalvik.vm.heapstartsize", heapstartsize);
-    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    property_override("dalvik.vm.heapsize", heapsize);
-    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
-    property_override("dalvik.vm.heapminfree", heapminfree);
-    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
+void vendor_load_properties()
+{
+    device_load_properties();
+    dalvik_load_properties();
 
     #ifdef __ANDROID_RECOVERY__
     std::string buildtype = GetProperty("ro.build.type", "userdebug");
