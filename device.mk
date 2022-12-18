@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     RcsService \
     PresencePolling
 
+# KPOC
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # Symbols
 PRODUCT_PACKAGES += \
     libshim_vtservice \
