@@ -4,7 +4,7 @@ else
 VENDOR_LOG_LEVEL=S
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.NetAgentService=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.NetworkStats=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.RfxSocketSM=$(VENDOR_LOG_LEVEL) \
