@@ -113,8 +113,8 @@ void device_load_properties()
     string region = GetProperty("ro.boot.product.regionmark", "");
     string hw = GetProperty("ro.boot.hwversion", "");
     if (hw == "0" || hw == "1" || hw == "2") {
-        model = "Realme Pad VoLTE";
-        sku = "volte";
+        model = "Realme Pad LTE";
+        sku = "lte";
         if (region == "EEA") {
             device = "RMP2102EEA";
         }
