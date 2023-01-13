@@ -16,15 +16,11 @@
     "target_path": "hardware/mediatek"
   },
   {
-    "repository": "vendor_mediatek_opensource_interfaces",
+    "repository": "android_vendor_mediatek_opensource_interfaces",
     "target_path": "vendor/mediatek/opensource/interfaces"
   },
   {
     "repository": "android_device_mediatek_sepolicy_vndr",
     "target_path": "device/mediatek/sepolicy_vndr"
-  },
-  {
-    "repository": "android_prebuilts_clang_host_linux-x86_clang-r437112",
-    "target_path": "prebuilts/clang/host/linux-x86/clang-r437112"
   }
 ]
