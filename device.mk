@@ -355,14 +355,14 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    libkeymaster4.vendor:64 \
-    libkeymaster4support.vendor:64 \
-    libsoft_attestation_cert.vendor:64 \
-    libkeymaster_portable.vendor:64 \
-    libkeymaster_messages.vendor:64 \
-    libsoft_attestation_cert.vendor:64 \
-    libpuresoftkeymasterdevice.vendor:64 \
-    libkeystore-engine-wifi-hidl:64 \
+    libkeymaster4.vendor \
+    libkeymaster4support.vendor \
+    libsoft_attestation_cert.vendor \
+    libkeymaster_portable.vendor \
+    libkeymaster_messages.vendor \
+    libsoft_attestation_cert.vendor \
+    libpuresoftkeymasterdevice.vendor \
+    libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl
 
 # Gatekeeper
