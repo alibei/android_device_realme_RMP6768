@@ -1,4 +1,4 @@
-# All Unpinned blobs are from RMP2102_11_A10
+# All Unpinned blobs are from RMP2102_11_A11
 
 # Audio
 -vendor/lib/libalsautils.so:vendor/lib/libalsautils-v30.so
