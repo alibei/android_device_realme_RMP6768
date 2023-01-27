@@ -80,3 +80,11 @@ wifi.interface=wlan0
 wifi.direct.interface=p2p0
 wifi.tethering.interface=ap0
 mediatek.wlan.ctia=0
+
+# Dex
+pm.dexopt.install=speed-profile
+pm.tdexop.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=quicken
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
