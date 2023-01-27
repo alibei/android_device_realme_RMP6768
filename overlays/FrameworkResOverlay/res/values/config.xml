@@ -565,4 +565,7 @@
         <item>1</item> <!-- COLOR_MODE_BOOSTED -->
     </integer-array>
 
+    <!-- Remove Mtk Ims app from privacy (location) indicators -->
+    <string name="config_systemAudioIntelligence" translatable="false">com.mediatek.ims</string>
+
 </resources>
