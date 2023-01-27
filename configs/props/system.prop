@@ -11,9 +11,10 @@ ro.charger.enable_suspend=true
 
 # Audio
 ro.camera.sound.forced=0
+ro.config.media_vol_steps=15
 ro.config.alarm_vol_steps=15
-ro.config.ring_notification_vol_steps=15
-ro.config.vc_call_vol_steps=15
+ro.config.ring_notification_vol_steps=10
+ro.config.vc_call_vol_steps=10
 ro.camera.sound.forced=0
 
 # GPU
