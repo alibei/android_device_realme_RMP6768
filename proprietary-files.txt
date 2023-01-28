@@ -478,8 +478,8 @@ vendor/lib64/libbt-vendor.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 
 # Bluetooth-AptX
-lib64/libaptXHD_encoder.so
-lib64/libaptX_encoder.so
+system/lib64/libaptXHD_encoder.so
+system/lib64/libaptX_encoder.so
 
 # Camera
 vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
@@ -551,11 +551,11 @@ vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 vendor/bin/hw/camerahalserver
 
 # Charger
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib/libshowlogo.so
-lib/libsysenv_system.so
-lib64/libsysenv_system.so
+system/bin/kpoc_charger
+system/etc/init/kpoc_charger.rc
+system/lib/libshowlogo.so
+system/lib/libsysenv_system.so
+system/lib64/libsysenv_system.so
 
 # DRM
 vendor/lib/liboemcrypto.so
@@ -573,15 +573,17 @@ vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
 # Display-Hardware
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek|b6fa0dedf2f63d1e50f5971d8ce0d08ac879e262
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|9f896ca7b981834be9e1a1116c971394f95ece07
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|30bc6b9fd5abe37f1c0b265b7448441776ee8f13
 vendor/lib/hw/memtrack.mt6768.so
-vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|20290857ee049b423dd1a8e493bf85a8653c4fea
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|54b3be407037e4ac1f64c51ba4d0b96aba75d393
 vendor/lib64/hw/hwcomposer.mt6768.so
 vendor/lib64/hw/memtrack.mt6768.so
+
+# Graphics
+vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek|b6fa0dedf2f63d1e50f5971d8ce0d08ac879e262
+vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|9f896ca7b981834be9e1a1116c971394f95ece07
+vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|30bc6b9fd5abe37f1c0b265b7448441776ee8f13
+vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|20290857ee049b423dd1a8e493bf85a8653c4fea
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|54b3be407037e4ac1f64c51ba4d0b96aba75d393
 
 # Firmware
 vendor/firmware/tp/21697/FW_HX83102E_TXD.bin
@@ -883,7 +885,7 @@ vendor/lib/hw/thermal.mt6768.so
 vendor/lib64/hw/thermal.mt6768.so
 
 # Wifi
-bin/iwpriv
+system/bin/iwpriv
 vendor/bin/hw/wpa_supplicant
 vendor/bin/stp_dump3
 vendor/bin/wfca
@@ -1481,29 +1483,28 @@ vendor/lib/libudf.so
 vendor/lib64/libudf.so|f57a4f63592b62c2de72b377021327756fc5fac1
 
 # IMS
-bin/vtservice
-etc/init/init.vtservice.rc
-lib/libcomutils.so
-lib/libimsma.so
-lib/libimsma_adapt.so
-lib/libimsma_rtp.so
-lib/libimsma_socketwrapper.so
-lib/libmtk_vt_service.so
-lib/libmtk_vt_wrapper.so
-lib/libmtkavenhancements.so
-lib/libsignal.so
-lib/libsink.so
-lib/libsource.so
-lib/libvcodec_cap.so
-lib/libvcodec_capenc.so
-lib/libvsim-adaptor-client.so
-lib/libvt_avsync.so
-lib64/libmtk_vt_wrapper.so
-lib64/libmtkavenhancements.so
-lib64/libvcodec_cap.so
-lib64/libvcodec_capenc.so
-lib64/libvsim-adaptor-client.so
--priv-app/ImsService/ImsService.apk|34b476377b6062f945d5ccf7355b805ab8005fcd
+system/bin/vtservice
+system/etc/init/init.vtservice.rc
+system/lib/libcomutils.so
+system/lib/libimsma.so
+system/lib/libimsma_adapt.so
+system/lib/libimsma_rtp.so
+system/lib/libimsma_socketwrapper.so
+system/lib/libmtk_vt_service.so
+system/lib/libmtk_vt_wrapper.so
+system/lib/libmtkavenhancements.so
+system/lib/libsignal.so
+system/lib/libsink.so
+system/lib/libsource.so
+system/lib/libvcodec_cap.so
+system/lib/libvcodec_capenc.so
+system/lib/libvsim-adaptor-client.so
+system/lib/libvt_avsync.so
+system/lib64/libmtk_vt_wrapper.so
+system/lib64/libmtkavenhancements.so
+system/lib64/libvcodec_cap.so
+system/lib64/libvcodec_capenc.so
+system/lib64/libvsim-adaptor-client.so
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/vtservice_hidl
@@ -1559,16 +1560,19 @@ vendor/lib64/libmtksysutils.so
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
+# ImsService - from https://github.com/Realme-Pad-Dev/ImsService
+-priv-app/ImsService/ImsService.apk|34b476377b6062f945d5ccf7355b805ab8005fcd
+
 # JARS
--framework/mediatek-common.jar
--framework/mediatek-framework-net.jar
--framework/mediatek-framework.jar
--framework/mediatek-ims-base.jar
--framework/mediatek-ims-common.jar
--framework/mediatek-ims-extension-plugin.jar
--framework/mediatek-ims-legacy.jar
--framework/mediatek-services.jar
--framework/mediatek-telecom-common.jar
--framework/mediatek-telephony-base.jar
--framework/mediatek-telephony-common.jar
--framework/mediatek-wfo-legacy.jar
+-system/framework/mediatek-common.jar
+-system/framework/mediatek-framework-net.jar
+-system/framework/mediatek-framework.jar
+-system/framework/mediatek-ims-base.jar
+-system/framework/mediatek-ims-common.jar
+-system/framework/mediatek-ims-extension-plugin.jar
+-system/framework/mediatek-ims-legacy.jar
+-system/framework/mediatek-services.jar
+-system/framework/mediatek-telecom-common.jar
+-system/framework/mediatek-telephony-base.jar
+-system/framework/mediatek-telephony-common.jar
+-system/framework/mediatek-wfo-legacy.jar
