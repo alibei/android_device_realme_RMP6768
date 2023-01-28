@@ -1,4 +1,5 @@
-# All Unpinned blobs are from RMP2102_11_A11
+## All unpinned blobs are extracted from RMP2102_11_A11 (full_oppo8786-user 11 RP1A.200720.011 806 release-keys)
+## https://www.opencode.net/Neil-Firmware-Dumps/realme/RMP2102
 
 # Audio
 vendor/lib/libaudio_param_parser-vnd.so
@@ -578,12 +579,12 @@ vendor/lib/hw/memtrack.mt6768.so
 vendor/lib64/hw/hwcomposer.mt6768.so
 vendor/lib64/hw/memtrack.mt6768.so
 
-# Graphics
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek|b6fa0dedf2f63d1e50f5971d8ce0d08ac879e262
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|9f896ca7b981834be9e1a1116c971394f95ece07
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|30bc6b9fd5abe37f1c0b265b7448441776ee8f13
-vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|20290857ee049b423dd1a8e493bf85a8653c4fea
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|54b3be407037e4ac1f64c51ba4d0b96aba75d393
+# Graphics - from V13.0.3.0.SJCINXM
+vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek|b5ed2172cf761f04896a68c93b58ae87f407a3e9
+vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|76ad23cf369d57c4e54b343a34db5857ea2af3ee
+vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|f9a1c4433877187d2a221b5737080bda49663f21
+vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so|fcd8bb4a81e0325976121558bd8fec691e68c54e
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so|bef0c783e7a56a318d07f7a18c0a8b5d235be44c
 
 # Firmware
 vendor/firmware/tp/21697/FW_HX83102E_TXD.bin
@@ -1478,9 +1479,9 @@ vendor/lib64/vendor.trustonic.tee.tui@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.1.so
 
-# AEE from Redmi/ares/ares:12/SP1A.210812.016/21.11.8:user/release-keys
-vendor/lib/libudf.so
-vendor/lib64/libudf.so|f57a4f63592b62c2de72b377021327756fc5fac1
+# AEE - from V13.0.3.0.SJCINXM
+vendor/lib/libudf.so|7cdbb5c5c616dbbec6afcd75d5cc41f915ff82d6
+vendor/lib64/libudf.so|66324571c3f69057b250bce3b0d58c386da0c25b
 
 # IMS
 system/bin/vtservice
@@ -1561,7 +1562,7 @@ vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # ImsService - from https://github.com/Realme-Pad-Dev/ImsService
--priv-app/ImsService/ImsService.apk|34b476377b6062f945d5ccf7355b805ab8005fcd
+-system/priv-app/ImsService/ImsService.apk|3b8ce9b0bcecdef8f14e35313e8397b7239d56a6
 
 # JARS
 -system/framework/mediatek-common.jar
