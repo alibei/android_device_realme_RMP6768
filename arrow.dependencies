@@ -16,10 +16,6 @@
     "target_path": "hardware/mediatek"
   },
   {
-    "repository": "android_vendor_mediatek_opensource_interfaces",
-    "target_path": "vendor/mediatek/opensource/interfaces"
-  },
-  {
     "repository": "android_device_mediatek_sepolicy_vndr",
     "target_path": "device/mediatek/sepolicy_vndr"
   }
