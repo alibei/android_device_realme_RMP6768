@@ -36,33 +36,33 @@ source "${HELPER}"
 
 function blob_fixup {
     case "$1" in
-        lib/libsink.so)
+        system/lib/libsink.so)
             "$PATCHELF" --add-needed "libshim_vtservice.so" "$2"
             ;;
-        lib/libshowlogo.so)
+        system/lib/libshowlogo.so)
             "${PATCHELF}" --add-needed "libshim_showlogo.so" "${2}"
-            ;;
-        vendor/lib64/libmtkcam_stdutils.so)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v30.so" "$2"
-            ;;
-        vendor/lib/hw/audio.primary.mt6768.so)
-            "$PATCHELF" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "$2"
-            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils-v30.so" "$2"
-            ;;
-        vendor/lib/hw/audio.usb.mt6768.so)
-            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils-v30.so" "$2"
-            ;;
-        vendor/lib64/hw/dfps.mt6768.so)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
         vendor/lib/libMtkOmxVdecEx.so)
             "$PATCHELF" --replace-needed "libui.so" "libui-v32.so" "$2"
             ;;
-        vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
-            ;;
         vendor/lib64/libwifi-hal-mtk.so)
             "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
+            ;;
+        vendor/lib64/libmtkcam_stdutils.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v30.so" "$2"
+            ;;
+        vendor/lib*/hw/audio.primary.mt6768.so)
+            "$PATCHELF" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "$2"
+            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils_legacy.so" "$2"
+            ;;
+        vendor/lib*/hw/audio.usb.mt6768.so)
+            "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils_legacy.so" "$2"
+            ;;
+        vendor/lib*/hw/dfps.mt6768.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+            ;;
+        vendor/lib*/hw/vendor.mediatek.hardware.pq@2.6-impl.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
         vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc)
             sed -i '/vts/Q' "$2"

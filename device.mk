@@ -271,13 +271,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
-    libbundlewrapper \
-    libdownmix \
-    libalsautils \
     libaudiopreprocessing \
+    libalsautils_legacy \
+    libbundlewrapper \
     libtinycompress \
+    libnbaio_mono \
+    libalsautils \
+    libdownmix \
     libtinyxml \
-    libnbaio_mono
+    tinymix
 
 # Bluetooth
 PRODUCT_PACKAGES += \

@@ -1,7 +1,6 @@
 # All Unpinned blobs are from RMP2102_11_A11
 
 # Audio
--vendor/lib/libalsautils.so:vendor/lib/libalsautils-v30.so
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudiocompensationfilter_vendor.so
 vendor/lib/libaudiocompensationfilterc.so
