@@ -45,12 +45,10 @@ on late-init
 # mount different fs start
 
 on charger
-    # Turn backlight on 
-    write /sys/class/leds/lcd-backlight/brightness 1000
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp -1
 
-    exec /bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
+    exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
     mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
@@ -82,6 +80,8 @@ on charger
     chown system system /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
+
+    start vendor.light-default
 
     # Stop bootprof
     write /proc/bootprof "0"
@@ -166,7 +166,7 @@ on late-fs
     write /proc/bootprof "INIT:Mount_START --late"
     write /sys/kernel/tracing/trace_marker "B|1|Mount late"
     mount_all /vendor/etc/fstab.mt6768 --late
-    exec /bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
+    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END --late"
 
