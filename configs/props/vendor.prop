@@ -91,8 +91,8 @@ debug.sf.early.app.duration=24000000
 debug.sf.earlyGl.sf.duration=30000000
 debug.sf.earlyGl.app.duration=24000000
 debug.sf.hwc.min.duration=23000000
-debug.sf.disable_backpressure=1
 debug.sf.enable_gl_backpressure=1
+debug.sf.disable_client_composition_cache=1
 ro.sf.lcd_density=240
 
 # FRP
