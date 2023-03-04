@@ -40,7 +40,7 @@ function blob_fixup {
             "$PATCHELF" --add-needed "libshim_vtservice.so" "$2"
             ;;
         system/lib/libshowlogo.so)
-            "${PATCHELF}" --add-needed "libshim_showlogo.so" "${2}"
+            "$PATCHELF" --add-needed "libshim_showlogo.so" "${2}"
             ;;
         vendor/lib/libMtkOmxVdecEx.so)
             "$PATCHELF" --replace-needed "libui.so" "libui-v32.so" "$2"

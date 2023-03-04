@@ -2,7 +2,6 @@
 
 on post-fs-data
 
-
 #
 # Connectivity related device nodes & configuration (begin)
 #
@@ -59,8 +58,3 @@ service lbs_dbg /system/bin/lbs_dbg
 
 on property:persist.vendor.em.dy.debug=1
     stop lbs_dbg
-
-#service BGW /vendor/bin/BGW
-#    user system
-#    group gps system radio
-#    class main

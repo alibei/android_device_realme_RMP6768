@@ -18,9 +18,9 @@
 // limitations under the License.
 //
 cc_library_static {
-    name: "libinit_rmp_mt6768",
+    name: "libinit_rmp6768",
     recovery_available: true,
-    srcs: ["init_rmp_mt6768.cpp"],
+    srcs: ["init_rmp6768.cpp"],
     header_libs: [
         "libbase_headers",
     ],

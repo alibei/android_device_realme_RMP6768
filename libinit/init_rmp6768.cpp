@@ -114,7 +114,6 @@ void device_load_properties()
     string hw = GetProperty("ro.boot.hwversion", "");
     if (hw == "0" || hw == "1" || hw == "2") {
         model = "Realme Pad LTE";
-        sku = "lte";
         if (region == "EEA") {
             device = "RMP2102EEA";
         }
@@ -130,7 +129,6 @@ void device_load_properties()
     }
     else if (hw == "3" || hw == "4" || hw == "5") {
         model = "Realme Pad WiFi";
-        sku = "wifi";
         if (region == "EEA") {
             device = "RMP2103EEA";
         }
@@ -146,7 +144,6 @@ void device_load_properties()
     }
     else {
         model = "Realme Pad";
-        sku = "unknown";
         device = "RMP6768";
     }
     // Override all partitions' props
@@ -158,8 +155,6 @@ void device_load_properties()
         property_override(string("ro.product.") + prop + string("model"), model);
 	    property_override(string("ro.") + prop + string("build.product"), device);
     }
-    // Set Product SKU
-    property_override("ro.boot.product.hardware.sku", sku);
 }
 
 void vendor_load_properties()

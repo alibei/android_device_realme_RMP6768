@@ -34,34 +34,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Product Details
 PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_BUILD_SUPER_PARTITION := false
+
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SCREEN_HEIGHT := 2000
+TARGET_SCREEN_WIDTH := 1200
+
+# Tablet
+PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_PACKAGES += \
+    androidx.window.extensions
 
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.RMP6768
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2000
-TARGET_SCREEN_WIDTH := 1200
-
 # Camera (GCamGo or TeraCube)
 ifeq ($(ARROW_OFFICIAL), true)
 PRODUCT_PACKAGES += \
     GCamGOPrebuilt
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-gcamgo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-gcamgo.xml
 else
 PRODUCT_PACKAGES += \
     Camera
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-teracube.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-teracube.xml
 endif
-
-# A/B
-AB_OTA_UPDATER := false
-
-# Tablet
-PRODUCT_CHARACTERISTICS := tablet
 
 # Overlays
 PRODUCT_PACKAGES += \
@@ -71,7 +66,6 @@ PRODUCT_PACKAGES += \
     SystemUIOverlay \
     SettingsOverlay \
     TetheringConfigOverlay \
-    CarrierConfigOverlay \
     WifiOverlay
 
 # Telephony Jars
@@ -155,9 +149,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(DEVICE_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
+    $(DEVICE_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
@@ -211,7 +203,6 @@ PRODUCT_PACKAGES += \
 
 # Fastboot
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
 # Protobuf
@@ -224,29 +215,19 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     android.hardware.thermal@1.0-impl
 
-# Tablet Specific
-PRODUCT_PACKAGES += \
-    androidx.window.extensions
-
-# Soundtrigger
-PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.3.vendor \
-    android.hardware.soundtrigger@2.0-core \
-    android.hardware.soundtrigger@2.3-impl
-
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.0.vendor \
-    android.hardware.radio.config@1.1.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.config@1.3.vendor \
     android.hardware.radio@1.0.vendor \
     android.hardware.radio@1.1.vendor \
     android.hardware.radio@1.2.vendor \
     android.hardware.radio@1.3.vendor \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
-    android.hardware.radio@1.6.vendor
+    android.hardware.radio.config@1.0.vendor \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio-V1.4-java
 
 # USB
 PRODUCT_PACKAGES += \
@@ -268,7 +249,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl
 
 PRODUCT_PACKAGES += \
-    audio_policy.stub \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default
@@ -280,13 +260,12 @@ PRODUCT_PACKAGES += \
     libbundlewrapper \
     libtinycompress \
     libnbaio_mono \
-    libalsautils \
     libdownmix \
     libtinyxml \
     tinymix
 
 PRODUCT_PACKAGES += \
-    BesLoudness \
+    BesLoudness
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -343,7 +322,6 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-resources \
     android.hardware.graphics.composer@2.1-resources.vendor \
     android.hardware.graphics.composer@2.1-service
 
@@ -351,7 +329,6 @@ PRODUCT_PACKAGES += \
     libhwc2onfbadapter \
     libvulkan \
     libdrm.vendor \
-    libdrm \
     disable_configstore
 
 # Wifi
@@ -359,10 +336,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.RMP6768 \
     android.hardware.wifi.supplicant@1.3.vendor \
     hostapd
-
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -409,7 +382,7 @@ PRODUCT_PACKAGES += \
 
 # Power Hint
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # HIDL
 PRODUCT_PACKAGES += \
