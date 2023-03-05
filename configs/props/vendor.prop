@@ -217,3 +217,6 @@ ro.vendor.smvr.p2batch.vga=8
 # Shutdown
 ro.vendor.mtk_shutdown_support=0
 init.userspace_reboot.is_supported=true
+
+# IncrementalFS
+ro.incremental.enable=yes
