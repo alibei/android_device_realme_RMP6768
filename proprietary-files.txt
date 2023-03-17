@@ -416,10 +416,6 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc
 -vendor/lib64/libbt-vendor.so
 -vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 
-# Bluetooth-AptX
--system/lib64/libaptXHD_encoder.so
--system/lib64/libaptX_encoder.so
-
 # Camera
 -vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 -vendor/lib/libDefaultFpsActor.so
