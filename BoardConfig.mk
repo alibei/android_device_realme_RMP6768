@@ -154,7 +154,7 @@ TARGET_SCREEN_DENSITY := 240
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # SPL
-VENDOR_SECURITY_PATCH := 2023-01-05
+VENDOR_SECURITY_PATCH := 2023-03-05
 
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk

@@ -1,4 +1,4 @@
-# All unpinned blobs are extracted from RMP2102_11_A11 (full_oppo8786-user 11 RP1A.200720.011 806 release-keys)
+# All unpinned blobs are extracted from RMP2102_11_A12 (full_oppo8786-user 11 RP1A.200720.011 816 release-keys)
 
 # AEE
 -vendor/lib/libaedv.so
