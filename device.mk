@@ -25,14 +25,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Inherit non-ab devices
+$(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
+
+# Inherit tablet specific make file
+$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
 # Inherit dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Call proprietary blob setup
 $(call inherit-product, vendor/realme/RMP6768/RMP6768-vendor.mk)
-
-# Inherit non-ab devices
-$(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
 # Product Details
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -45,8 +48,6 @@ TARGET_SCREEN_WIDTH := 1200
 
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
-PRODUCT_PACKAGES += \
-    androidx.window.extensions
 
 # Lights
 PRODUCT_PACKAGES += \
