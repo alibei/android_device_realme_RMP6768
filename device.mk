@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
     SystemUIOverlay \
     SettingsOverlay \
     TetheringConfigOverlay \
+    CarrierConfigOverlay \
     WifiOverlay
 
 # Telephony Jars
