@@ -1,3 +1,6 @@
 # ZRAM
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
+
+# Zygote
+allow system_app zygote:unix_stream_socket getopt;
