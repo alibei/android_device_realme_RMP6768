@@ -37,10 +37,10 @@ source "${HELPER}"
 function blob_fixup {
     case "$1" in
         system/lib/libsink.so)
-            "$PATCHELF" --add-needed "libshim_vtservice.so" "$2"
+            grep -q "libshim_vtservice.so" "$2" || "$PATCHELF" --add-needed "libshim_vtservice.so" "$2"
             ;;
         system/lib/libshowlogo.so)
-            "$PATCHELF" --add-needed "libshim_showlogo.so" "${2}"
+            grep -q "libshim_showlogo.so" "$2" || "$PATCHELF" --add-needed "libshim_showlogo.so" "$2"
             ;;
         vendor/lib/libMtkOmxVdecEx.so)
             "$PATCHELF" --replace-needed "libui.so" "libui-v32.so" "$2"
@@ -52,7 +52,7 @@ function blob_fixup {
             "$PATCHELF" --replace-needed "libutils.so" "libutils-v30.so" "$2"
             ;;
         vendor/lib*/hw/audio.primary.mt6768.so)
-            "$PATCHELF" --add-needed "libshim_audio.so" "$2"
+            grep -q "libshim_audio.so" "$2" || "$PATCHELF" --add-needed "libshim_audio.so" "$2"
             "$PATCHELF" --replace-needed "libalsautils.so" "libalsautils_legacy.so" "$2"
             ;;
         vendor/lib*/hw/audio.usb.mt6768.so)
