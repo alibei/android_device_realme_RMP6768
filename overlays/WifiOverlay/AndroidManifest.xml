@@ -12,7 +12,7 @@
 -->
 <!-- Pixel specific wifi overlays -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.arrow.wifi.resources.RMP6768"
+    package="com.lineage.wifi.resources.RMP6768"
     android:versionCode="1"
     android:versionName="1.0">
     <application android:hasCode="false" />

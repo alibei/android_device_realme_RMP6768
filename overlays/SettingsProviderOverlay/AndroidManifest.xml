@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.arrow.settingsprovideroverlay">
+    package="com.lineage.settingsprovideroverlay">
 
     <application android:hasCode="false" />
     <overlay android:targetPackage="com.android.providers.settings"

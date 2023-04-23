@@ -18,17 +18,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Arrow stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_tablet.mk)
 
 # Inherit from RMP6768 device
 $(call inherit-product, device/realme/RMP6768/device.mk)
 
-# ArrowOS Specific Flags
-DEVICE_MAINTAINER := NeilChetty
-
 PRODUCT_DEVICE := RMP6768
-PRODUCT_NAME := arrow_RMP6768
+PRODUCT_NAME := lineage_RMP6768
 PRODUCT_BRAND := Realme
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_MODEL := Realme Pad
