@@ -28,9 +28,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Inherit non-ab devices
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
-# Inherit tablet specific make file
-$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
 # Inherit dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 

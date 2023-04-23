@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.arrow.frameworkresoverlay">
+    package="com.lineage.frameworkresoverlay">
 
     <application android:hasCode="false" />
     <overlay android:targetPackage="android"

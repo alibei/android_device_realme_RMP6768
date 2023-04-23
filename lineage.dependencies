@@ -1,0 +1,32 @@
+[
+  {
+    "remote": "github",
+    "repository": "Realme-Pad-Dev/android_device_realme_RMP6768",
+    "target_path": "device/realme/RMP6768",
+    "revision": "lineage-20.0"
+  },
+  {
+    "remote": "github",
+    "repository": "Realme-Pad-Dev/android_vendor_realme_RMP6768",
+    "target_path": "vendor/realme/RMP6768",
+    "revision": "lineage-20.0"
+  },
+  {
+    "remote": "github",
+    "repository": "Realme-Pad-Dev/android_kernel_realme_RMP6768",
+    "target_path": "kernel/realme/RMP6768",
+    "revision": "lineage-20.0"
+  },
+  {
+    "remote": "github",
+    "repository": "LineageOS/android_hardware_mediatek",
+    "target_path": "hardware/mediatek",
+    "revision": "lineage-20.0"
+  },
+  {
+    "remote": "github",
+    "repository": "LineageOS/android_device_mediatek_sepolicy_vndr",
+    "target_path": "device/mediatek/sepolicy_vndr",
+    "revision": "lineage-20.0"
+  },
+]
