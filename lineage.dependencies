@@ -13,8 +13,8 @@
   },
   {
     "remote": "github",
-    "repository": "Realme-Pad-Dev/android_kernel_realme_RMP6768",
-    "target_path": "kernel/realme/RMP6768",
+    "repository": "Realme-Pad-Dev/android_kernel_realme_oppo8786",
+    "target_path": "kernel/realme/oppo8786",
     "revision": "lineage-20.0"
   },
   {
