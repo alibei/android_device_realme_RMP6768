@@ -173,3 +173,5 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
+ODM_MANIFEST_SKUS += rmp2102
+ODM_MANIFEST_RMP2102_FILES := $(DEVICE_PATH)/configs/vintf/manifest-rmp2102.xml

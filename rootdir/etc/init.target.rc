@@ -1,0 +1,157 @@
+# RMP2102 (LTE Variant)
+on property:ro.boot.product.hardware.sku=rmp2102
+
+    # Enable services
+    enable ccci_mdinit
+    enable ccci3_mdinit
+    enable mtk_secure_element_hal_service
+    enable netdagent
+    enable vendor.ccci_fsd
+    enable vendor.ccci_rpcd
+    enable vendor.ccci3_fsd
+    enable vtservice
+    enable vtservice_hidl
+    enable wfca
+
+    # Set props (IMS)
+    setprop persist.vendor.ims_support 1
+    setprop persist.vendor.log.tel_log_ctrl 1
+    setprop persist.vendor.md_c2k_cap_dep_check 0
+    setprop persist.vendor.mims_support 2
+    setprop persist.vendor.mtk.volte.enable 1
+    setprop persist.vendor.mtk_ct_volte_support 1
+    setprop persist.vendor.mtk_dynamic_ims_switch 1
+    setprop persist.vendor.mtk_sim_switch_policy 2
+    setprop persist.vendor.mtk_wfc_support 1
+    setprop persist.vendor.vilte_support 0
+    setprop persist.vendor.viwifi_support 1
+    setprop persist.vendor.volte_support 1
+    setprop persist.vendor.mtk.vilte.enable 0
+    setprop ro.vendor.md_auto_setup_ims 1
+
+    # Set props (Radio)
+    setprop persist.radio.multisim.config dsds
+    setprop persist.vendor.radio.msimmode dsds
+    setprop ro.vendor.radio.max.multisim dsds
+    setprop persist.vendor.radio.fd.counter 150
+    setprop persist.vendor.radio.fd.off.counter 50
+    setprop persist.vendor.radio.fd.off.r8.counter 50
+    setprop persist.vendor.radio.fd.r8.counter 150
+    setprop persist.vendor.radio.mtk_dsbp_support 2
+    setprop persist.vendor.radio.mtk_ps2_rat L/W/G
+    setprop persist.vendor.radio.mtk_ps3_rat G
+    setprop persist.vendor.radio.smart.data.switch 1
+    setprop ro.vendor.md_log_memdump_wait 15
+    setprop ro.vendor.md_prop_ver 1
+    setprop ro.vendor.mtk_c2k_lte_mode 0
+    setprop ro.telephony.default_network 9,9,9,9
+    setprop ro.telephony.sim.count 2
+    setprop ro.vendor.mtk_data_config 1
+    setprop ro.vendor.mtk_eccci_c2k 1
+    setprop ro.vendor.mtk_embms_support 1
+    setprop ro.vendor.mtk_flight_mode_power_off_md 1
+    setprop ro.vendor.mtk_lte_support 1
+    setprop ro.vendor.mtk_md1_support 9
+    setprop ro.vendor.mtk_md_world_mode_support 1
+    setprop ro.vendor.mtk_modem_monitor_support 1
+    setprop ro.vendor.mtk_protocol1_rat_config Lf/Lt/W/G
+    setprop ro.vendor.mtk_ps1_rat Lf/Lt/W/G
+    setprop ro.vendor.mtk_sim_hot_swap_common_slot 1
+    setprop ro.vendor.mtk_sim_card_onoff 3
+    setprop ro.vendor.mtk_external_sim_only_slots 0
+    setprop ro.vendor.mtk_single_bin_modem_support 1
+    setprop ro.vendor.mtk_world_phone_policy 0
+    setprop ro.vendor.num_md_protocol 2
+    setprop ro.vendor.sim_me_lock_mode 0
+    setprop ro.vendor.sim_refresh_reset_by_modem 1
+
+    # Set props (RIL)
+    setprop ro.vendor.mtk_ril_mode c6m_1rild
+    setprop ro.vendor.mtk_rild_read_imsi 1
+
+
+# Services
+service ccci_mdinit /vendor/bin/ccci_mdinit 0
+    override
+    user system
+    group radio system
+    class core
+    oneshot
+    disabled
+
+service ccci3_mdinit /vendor/bin/ccci_mdinit 2
+    override
+    user system
+    group radio system
+    class core
+    oneshot
+    disabled
+
+service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+    override
+    class hal
+    user secure_element
+    group secure_element
+    disabled
+
+service netdagent /vendor/bin/netdagent
+    override
+    class late_start
+    user system
+    group net_admin net_raw system misc
+    capabilities NET_ADMIN NET_RAW
+    disabled
+
+service vendor.ccci_fsd /vendor/bin/ccci_fsd 0
+    override
+    user radio
+    group radio system
+    class core
+    priority -20
+    ioprio rt 4
+    oneshot
+    disabled
+
+service vendor.ccci_rpcd /vendor/bin/ccci_rpcd 0
+    override
+    user radio
+    group radio system
+    class core
+    oneshot
+    disabled
+
+service vendor.ccci3_fsd /vendor/bin/ccci_fsd 2
+    override
+    user radio
+    group  radio system
+    class core
+    oneshot
+    disabled
+
+service vtservice /system/bin/vtservice
+    override
+    class main
+    user system
+    group system camera graphics inet net_admin net_raw media sdcard_rw radio sdcard_r media_rw
+    capabilities NET_ADMIN NET_RAW
+    ioprio rt 4
+    disabled
+
+service vtservice_hidl /vendor/bin/hw/vtservice_hidl
+    override
+    class hal
+    socket volte_vt stream 660 root system
+    user system
+    group system camera graphics inet net_admin net_raw media sdcard_rw radio sdcard_r media_rw
+    ioprio rt 4
+    disabled
+
+service wfca /vendor/bin/wfca
+    override
+    class core
+    socket wfca stream 660 root system
+    socket wfca_rds stream 660 root system
+    user system
+    group system log inet radio net_raw net_admin
+    capabilities NET_RAW NET_ADMIN
+    disabled
