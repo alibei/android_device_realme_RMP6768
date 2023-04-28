@@ -1,18 +1,18 @@
-# Touch Panel
-type proc_tp, fs_type, proc_type;
-
 # Graphics
 type sysfs_mali, fs_type, sysfs_type;
 
 # Latency
 type latency_device, dev_type;
 
-# PPS
-type pps_socket, file_type;
+# OTG
+type sysfs_otg_switch, fs_type, sysfs_type;
 
 # Performance
 type sysfs_mtk_cpufreq, fs_type, sysfs_type;
 type sysfs_mtk_gpufreq, fs_type, sysfs_type;
 
-# OTG
-type sysfs_otg_switch, fs_type, sysfs_type;
+# PPS
+type pps_socket, file_type;
+
+# Touch Panel
+type proc_tp, fs_type, proc_type;

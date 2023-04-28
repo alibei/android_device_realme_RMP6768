@@ -67,7 +67,7 @@ void dalvik_load_properties()
     sysinfo(&sys);
     // Set dalvik heap configuration
     string heapstartsize, heapgrowthlimit, heapsize, heapminfree,
-			heapmaxfree, heaptargetutilization;
+            heapmaxfree, heaptargetutilization;
    if (sys.totalram > 5072ull * 1024 * 1024) {
         // from - phone-xhdpi-6144-dalvik-heap.mk
         heapstartsize = "16m";
@@ -148,12 +148,12 @@ void device_load_properties()
     }
     // Override all partitions' props
     string prop_partitions[] = { "", "odm.", "product.", "system.",
-					"system_ext.", "bootimage.", "vendor." };
+                    "system_ext.", "bootimage.", "vendor." };
     for (const string &prop : prop_partitions) {
         property_override(string("ro.product.") + prop + string("name"), device);
         property_override(string("ro.product.") + prop + string("device"), device);
         property_override(string("ro.product.") + prop + string("model"), model);
-	    property_override(string("ro.") + prop + string("build.product"), device);
+        property_override(string("ro.") + prop + string("build.product"), device);
     }
 }
 

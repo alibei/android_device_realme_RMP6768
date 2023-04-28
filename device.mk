@@ -34,75 +34,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Call proprietary blob setup
 $(call inherit-product, vendor/realme/RMP6768/RMP6768-vendor.mk)
 
-# Product Details
-PRODUCT_SHIPPING_API_LEVEL := 30
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# Boot animation
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SCREEN_HEIGHT := 2000
-TARGET_SCREEN_WIDTH := 1200
-
-# Tablet
-PRODUCT_CHARACTERISTICS := tablet
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.RMP6768
-
-# Camera (GCamGo or TeraCube)
-ifeq ($(ARROW_OFFICIAL), true)
-PRODUCT_PACKAGES += \
-    GCamGOPrebuilt
-else
-PRODUCT_PACKAGES += \
-    Camera
-endif
-
-# Overlays
-PRODUCT_PACKAGES += \
-    FrameworkResOverlay \
-    TelephonyOverlay \
-    SettingsProviderOverlay \
-    SystemUIOverlay \
-    SettingsOverlay \
-    TetheringConfigOverlay \
-    CarrierConfigOverlay \
-    WifiOverlay
-
-# Telephony Jars
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
-
-# RcsService
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    RcsService \
-    PresencePolling
-
-# KPOC
-PRODUCT_PACKAGES += \
-    libsuspend
-
-# Shims
-PRODUCT_PACKAGES += \
-    libshim_vtservice \
-    libshim_showlogo \
-    libshim_audio
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/mediatek \
-    $(DEVICE_PATH)
-
 # Permissions
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
@@ -146,102 +77,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Audio
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
-    $(DEVICE_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(DEVICE_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
-
-# Media
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(DEVICE_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
-    $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(DEVICE_PATH)/configs/media/media_codecs_mediatek_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_video.xml \
-    $(DEVICE_PATH)/configs/media/media_codecs_mediatek_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_audio.xml \
-    $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
-
-# WiFi
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
-
-# Public Libraries
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/publiclibraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
-# Seccomp
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    $(DEVICE_PATH)/configs/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
-    $(DEVICE_PATH)/configs/seccomp/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
-
-# Vendor Log Tag
-include $(DEVICE_PATH)/configs/props/logtag.mk
-
-# RootDir
-PRODUCT_PACKAGES += \
-    init.connectivity.rc \
-    init.recovery.mt6768.rc \
-    init.modem.rc \
-    init.mt6768.rc \
-    init.mt6768.usb.rc \
-    init.project.rc \
-    init.sensor_1_0.rc \
-    ueventd.mtk.rc \
-    fstab.mt6768
-
-# Fastboot
-PRODUCT_PACKAGES += \
-    fastbootd
-
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0.vendor \
-    android.hardware.thermal@1.0-impl
-
-# Radio
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.0.vendor \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio@1.2.vendor \
-    android.hardware.radio@1.3.vendor \
-    android.hardware.radio@1.4.vendor \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.0.vendor \
-    android.hardware.radio.config@1.1.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.radio-V1.4-java
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.RMP6768
-
-# Secure Element
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0.vendor \
-    android.hardware.secure_element@1.1.vendor \
-    android.hardware.secure_element@1.2.vendor
-
-# Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service-mediatek \
     android.hardware.audio@6.0-impl \
@@ -267,54 +102,47 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BesLoudness
 
+# Audio configs
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
+    $(DEVICE_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(DEVICE_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
+    $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth.audio-impl
 
-# Neutral Networks
+# Binder
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.0.vendor \
-    android.hardware.neuralnetworks@1.1.vendor \
-    android.hardware.neuralnetworks@1.2.vendor \
-    android.hardware.neuralnetworks@1.3.vendor
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SCREEN_HEIGHT := 2000
+TARGET_SCREEN_WIDTH := 1200
 
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
-    android.hardware.camera.device@3.2.vendor \
-    android.hardware.camera.device@1.0.vendor \
-    android.hardware.camera.device@3.3.vendor \
-    android.hardware.camera.device@3.4.vendor \
-    android.hardware.camera.device@3.5.vendor \
     android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.4.vendor \
-    android.hardware.camera.provider@2.5.vendor \
     android.hardware.camera.provider@2.6.vendor \
     libcamera2ndk_vendor
-
-# Sensors
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0.vendor \
-    android.hardware.sensors@2.0.vendor \
-    android.frameworks.sensorservice@1.0 \
-    libsensorndkbridge
-
-# Memtrack
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-service \
-    android.hardware.memtrack@1.0-impl
-
-# Textclassifier
-PRODUCT_PACKAGES += \
-    libtextclassifier_hash.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.0.vendor \
-    android.hardware.drm@1.1.vendor \
-    android.hardware.drm@1.2.vendor \
     android.hardware.drm@1.3.vendor
 
 PRODUCT_PACKAGES += \
@@ -331,11 +159,35 @@ PRODUCT_PACKAGES += \
     libdrm.vendor \
     disable_configstore
 
-# Wifi
+# Fastboot
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.RMP6768 \
-    android.hardware.wifi.supplicant@1.3.vendor \
-    hostapd
+    fastbootd
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-impl
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.allocator@1.0 \
+    android.hidl.allocator@1.0.vendor \
+    android.hidl.memory.block@1.0 \
+    android.hidl.memory@1.0-impl
+
+# Inherit several Android Go Configurations (Beneficial for everyone, even on non-Go devices)
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -349,26 +201,50 @@ PRODUCT_PACKAGES += \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl
 
-# Gatekeeper
+# KPOC
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-service \
-    android.hardware.gatekeeper@1.0-impl
+    libsuspend
 
-# Health
+# Lights
 PRODUCT_PACKAGES += \
-   android.hardware.health@2.1-impl.recovery \
-   android.hardware.health@2.1-service \
-   android.hardware.health@2.0 \
-   android.hardware.health@2.1-impl
+    android.hardware.light-service.RMP6768
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_mediatek_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_video.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_mediatek_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_mediatek_audio.xml \
+    $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl
+
+# Neutral Networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
+
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlayRMP6768 \
+    FrameworkResOverlayRMP6768 \
+    SettingsOverlayRMP6768 \
+    SettingsProviderOverlayRMP6768 \
+    SystemUIOverlayRMP6768 \
+    TelephonyOverlayRMP6768 \
+    TetheringConfigOverlayRMP6768 \
+    WifiOverlayRMP6768
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mediatek-libperfmgr
-
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0.vendor \
-    android.hardware.power@1.1.vendor \
-    android.hardware.power@1.2.vendor \
+    android.hardware.power-service.mediatek-libperfmgr \
     android.hardware.power@1.3.vendor
 
 PRODUCT_PACKAGES += \
@@ -377,34 +253,118 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.0.vendor \
-    vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub
 
 # Power Hint
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.allocator@1.0 \
-    android.hidl.allocator@1.0.vendor \
-    android.hidl.memory.block@1.0 \
-    android.hidl.memory@1.0-impl
+# Product Details
+PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Binder
+# Protobuf
 PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
 
-# GNSS
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/publiclibraries/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
+# Radio
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1.vendor
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio-V1.4-java
 
-# Inherit several Android Go Configurations (Beneficial for everyone, even on non-Go devices)
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
+# RcsService
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    RcsService \
+    PresencePolling
+
+# RootDir
+PRODUCT_PACKAGES += \
+    init.connectivity.rc \
+    init.recovery.mt6768.rc \
+    init.modem.rc \
+    init.mt6768.rc \
+    init.mt6768.usb.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    ueventd.mtk.rc \
+    fstab.mt6768
+
+# Seccomp
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    $(DEVICE_PATH)/configs/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
+    $(DEVICE_PATH)/configs/seccomp/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
+
+# Secure Element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0.vendor \
+    android.frameworks.sensorservice@1.0 \
+    libsensorndkbridge
+
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_vtservice \
+    libshim_showlogo \
+    libshim_audio
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/mediatek \
+    $(DEVICE_PATH)
+
+# Tablet
+PRODUCT_CHARACTERISTICS := tablet
+
+# Telephony Jars
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-framework \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common
+
+# Textclassifier
+PRODUCT_PACKAGES += \
+    libtextclassifier_hash.vendor
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@1.0-impl
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.1-service.RMP6768
+
+# Vendor Log Tag
+include $(DEVICE_PATH)/configs/props/logtag.mk
+
+# WiFi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service.RMP6768 \
+    android.hardware.wifi.supplicant@1.3.vendor \
+    hostapd
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(DEVICE_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf
 
 # VNDK
 PRODUCT_PACKAGES += \

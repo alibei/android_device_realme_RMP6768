@@ -8,6 +8,7 @@ ro.vendor.have_aeev_feature=1
 ro.vendor.mtk_audio_alac_support=1
 ro.vendor.mtk_audio_ape_support=1
 ro.vendor.mtk_audio_tuning_tool_ver=V2.2
+ro.vendor.mtk_besloudness_support=1
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
@@ -43,14 +44,23 @@ persist.vendor.camera3.pipeline.bufnum.min.low_ram.lcso=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rrzo=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rsso=6
 ro.vendor.camera3.zsl.default=140
+ro.vendor.jpeg_decode_sw_opt=1
 ro.vendor.mtk_camera_app_version=3
+ro.vendor.mtk_fd_support=1
+ro.vendor.mtk_slow_motion_support=1
+ro.vendor.mtk_zsdhdr_support=1
+ro.vendor.smvr.p2batch.hd=4
+ro.vendor.smvr.p2batch.vga=8
 vendor.camera.mdp.cz.enable=1
 vendor.camera.mdp.dre.enable=0
 
-# DRM
-drm.service.enabled=true
-ro.vendor.mtk_widevine_drm_l1_support=1
-ro.netflix.bsp_rev=MTK6768-19054-1
+# Connsys
+persist.vendor.connsys.chipid=-1
+persist.vendor.connsys.patch.version=-1
+persist.vendor.connsys.dynamic.dump=0
+vendor.connsys.driver.ready=no
+persist.vendor.connsys.fm_chipid=mt6631
+ro.vendor.connsys.dedicated.log=1
 
 # Data
 ro.vendor.mtk_emmc_support=1
@@ -68,68 +78,24 @@ ro.vendor.mtk_pq_support=2
 ro.vendor.mtk_aal_support=1
 ro.vendor.mtk_blulight_def_support=1
 
-# Connsys
-persist.vendor.connsys.chipid=-1
-persist.vendor.connsys.patch.version=-1
-persist.vendor.connsys.dynamic.dump=0
-vendor.connsys.driver.ready=no
-persist.vendor.connsys.fm_chipid=mt6631
-ro.vendor.connsys.dedicated.log=1
+# DRAM
+ro.vendor.mtk_config_max_dram_size=0x800000000
 
-# SurfaceFlinger
-media.stagefright.thumbnail.prefer_hw_codecs=true
-ro.surface_flinger.primary_display_orientation=ORIENTATION_0
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3 
-debug.sf.use_phase_offsets_as_durations=1
-debug.sf.late.sf.duration=30000000
-debug.sf.late.app.duration=24000000
-debug.sf.early.sf.duration=30000000
-debug.sf.early.app.duration=24000000
-debug.sf.earlyGl.sf.duration=30000000
-debug.sf.earlyGl.app.duration=24000000
-debug.sf.hwc.min.duration=23000000
-debug.sf.enable_gl_backpressure=1
-debug.sf.disable_client_composition_cache=1
-debug.sf.enable_transaction_tracing=false
-debug.sf.predict_hwc_composition_strategy=0
-ro.sf.lcd_density=240
+# DRM
+drm.service.enabled=true
+ro.netflix.bsp_rev=MTK6768-19054-1
+ro.vendor.mtk_widevine_drm_l1_support=1
+ro.vendor.mtk_sec_video_path_support=1
 
 # FRP
 ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
 
-# MediaTek
-ro.vendor.mediatek.platform=MT6768
-ro.vendor.mediatek.version.branch=alps-mp-r0.mp1.tc16sp-pr7
-ro.vendor.mediatek.version.release=alps-mp-r0.mp1.tc16sp-pr7-V1
-
-# LMK
-ro.lmk.psi_complete_stall_ms=35
-ro.lmk.swap_free_low_percentage=10
-ro.lmk.psi_partial_stall_ms=35
-ro.lmk.thrashing_limit=10
-ro.lmk.thrashing_limit_decay=2
-ro.lmk.kill_timeout_ms=100
-
-# WiFi
-ro.vendor.wifi.sap.interface=ap0
-ro.vendor.wlan.gen=gen4m
-ro.telephony.iwlan_operation_mode=default
-ro.vendor.mtk_wfd_support=1
-ro.vendor.wfd.dummy.enable=0
-wifi.concurrent.interface=ap0
-ro.vendor.wfd.iframesize.level=0
-
-# Neural Network
-ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
-ro.vendor.mtk_nn_quant_preferred=1
-ro.vendor.mtk_nn_support=1
-
-# Zygote
-zygote.critical_window.minute=10
-
-# TEE
-ro.hardware.kmsetkey=trustonic
+# GPS
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_log_hide_gps=0
+ro.vendor.mtk_wapi_support=1
+ro.vendor.mtk_wappush_support=1
 
 # IMS
 persist.vendor.ims_support=1
@@ -145,17 +111,41 @@ persist.vendor.vilte_support=0
 persist.vendor.viwifi_support=1
 persist.vendor.volte_support=1
 persist.vendor.mtk.vilte.enable=0
+ro.vendor.md_auto_setup_ims=1
+
+# Iorap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+
+# IncrementalFS
+ro.incremental.enable=yes
+
+# LMK
+ro.lmk.psi_complete_stall_ms=35
+ro.lmk.swap_free_low_percentage=10
+ro.lmk.psi_partial_stall_ms=35
+ro.lmk.thrashing_limit=10
+ro.lmk.thrashing_limit_decay=2
+ro.lmk.kill_timeout_ms=100
+
+# Media
+ro.vendor.pref_scale_enable_cfg=1
+vendor.mtk.vdec.waitkeyframeforplay=9
+
+# MediaTek
+ro.vendor.mediatek.platform=MT6768
+ro.vendor.mediatek.version.branch=alps-mp-r0.mp1.tc16sp-pr7
+ro.vendor.mediatek.version.release=alps-mp-r0.mp1.tc16sp-pr7-V1
+
+# Neural Network
+ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
+ro.vendor.mtk_nn_quant_preferred=1
+ro.vendor.mtk_nn_support=1
+
+# NFC
+ro.vendor.mtk_exchange_support=1
 
 # Power
 ro.vendor.ap_info_monitor=0
-
-# Media
-vendor.mtk.vdec.waitkeyframeforplay=9
-
-# RIL
-ro.vendor.mtk_ril_mode=c6m_1rild
-ro.vendor.mtk_rild_read_imsi=1
-persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 
 # Radio
 persist.radio.multisim.config=dsds
@@ -169,52 +159,70 @@ persist.vendor.radio.mtk_dsbp_support=2
 persist.vendor.radio.mtk_ps2_rat=L/W/G
 persist.vendor.radio.mtk_ps3_rat=G
 persist.vendor.radio.smart.data.switch=1
-ro.vendor.jpeg_decode_sw_opt=1
-ro.vendor.md_auto_setup_ims=1
 ro.vendor.md_log_memdump_wait=15
 ro.vendor.md_prop_ver=1
-ro.vendor.mtk_agps_app=1
-ro.vendor.mtk_besloudness_support=1
 ro.vendor.mtk_c2k_lte_mode=0
 ro.telephony.default_network=9,9,9,9
 ro.telephony.sim.count=2
-ro.vendor.mtk_config_max_dram_size=0x800000000
 ro.vendor.mtk_data_config=1
 ro.vendor.mtk_eccci_c2k=1
 ro.vendor.mtk_embms_support=1
-ro.vendor.mtk_exchange_support=1
-ro.vendor.mtk_fd_support=1
 ro.vendor.mtk_flight_mode_power_off_md=1
-ro.vendor.mtk_gps_support=1
-ro.vendor.mtk_log_hide_gps=0
 ro.vendor.mtk_lte_support=1
 ro.vendor.mtk_md1_support=9
 ro.vendor.mtk_md_world_mode_support=1
 ro.vendor.mtk_modem_monitor_support=1
 ro.vendor.mtk_protocol1_rat_config=Lf/Lt/W/G
 ro.vendor.mtk_ps1_rat=Lf/Lt/W/G
-ro.vendor.mtk_sec_video_path_support=1
 ro.vendor.mtk_sim_hot_swap_common_slot=1
 ro.vendor.mtk_sim_card_onoff=3
 ro.vendor.mtk_external_sim_only_slots=0
 ro.vendor.mtk_single_bin_modem_support=1
-ro.vendor.mtk_slow_motion_support=1
-ro.vendor.mtk_tee_gp_support=1
-ro.vendor.mtk_trustonic_tee_support=1
-ro.vendor.mtk_wapi_support=1
-ro.vendor.mtk_wappush_support=1
 ro.vendor.mtk_world_phone_policy=0
-ro.vendor.mtk_zsdhdr_support=1
 ro.vendor.num_md_protocol=2
-ro.vendor.pref_scale_enable_cfg=1
 ro.vendor.sim_me_lock_mode=0
 ro.vendor.sim_refresh_reset_by_modem=1
-ro.vendor.smvr.p2batch.hd=4
-ro.vendor.smvr.p2batch.vga=8
+
+# RIL
+ro.vendor.mtk_ril_mode=c6m_1rild
+ro.vendor.mtk_rild_read_imsi=1
 
 # Shutdown
 ro.vendor.mtk_shutdown_support=0
 init.userspace_reboot.is_supported=true
 
-# IncrementalFS
-ro.incremental.enable=yes
+# SurfaceFlinger
+media.stagefright.thumbnail.prefer_hw_codecs=true
+ro.surface_flinger.primary_display_orientation=ORIENTATION_0
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+debug.sf.use_phase_offsets_as_durations=1
+debug.sf.late.sf.duration=30000000
+debug.sf.late.app.duration=24000000
+debug.sf.early.sf.duration=30000000
+debug.sf.early.app.duration=24000000
+debug.sf.earlyGl.sf.duration=30000000
+debug.sf.earlyGl.app.duration=24000000
+debug.sf.hwc.min.duration=23000000
+debug.sf.enable_gl_backpressure=1
+debug.sf.disable_client_composition_cache=1
+debug.sf.enable_transaction_tracing=false
+debug.sf.predict_hwc_composition_strategy=0
+ro.sf.lcd_density=240
+
+# TEE
+ro.hardware.kmsetkey=trustonic
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_trustonic_tee_support=1
+
+# WiFi
+ro.telephony.iwlan_operation_mode=default
+ro.vendor.mtk_wfd_support=1
+ro.vendor.wifi.sap.interface=ap0
+ro.vendor.wlan.gen=gen4m
+ro.vendor.wfd.dummy.enable=0
+ro.vendor.wfd.iframesize.level=0
+wifi.concurrent.interface=ap0
+
+# Zygote
+zygote.critical_window.minute=10
