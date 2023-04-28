@@ -1,3 +1,14 @@
+# Graphics
+genfscon sysfs /devices/platform/13040000.mali                                                                    u:object_r:sysfs_mali:s0
+
+# OTG
+genfscon sysfs /class/power_supply/usb/otg_switch                                                                 u:object_r:sysfs_otg_switch:s0
+genfscon sysfs /devices/platform/charger/power_supply/usb/otg_switch                                              u:object_r:sysfs_otg_switch:s0
+
+# Performance
+genfscon sysfs /devices/system/cpu/cpufreq/mtk/.cluster_(min|max)_freq                                            u:object_r:sysfs_mtk_cpufreq:s0
+genfscon sysfs /kernel/gpu/gpu_(min|max)_clock                                                                    u:object_r:sysfs_mtk_gpufreq:s0
+
 # Touchpanel
 genfscon proc  /touchpanel                                                                                        u:object_r:proc_tp:s0
 
@@ -14,14 +25,3 @@ genfscon sysfs /devices/platform/charger/power_supply/battery/wakeup            
 genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/charger/wakeup                                                                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/odm/odm:hall_switch/wakeup                                                       u:object_r:sysfs_wakeup:s0
-
-# Performance
-genfscon sysfs /devices/system/cpu/cpufreq/mtk/.cluster_(min|max)_freq                                            u:object_r:sysfs_mtk_cpufreq:s0
-genfscon sysfs /kernel/gpu/gpu_(min|max)_clock                                                                    u:object_r:sysfs_mtk_gpufreq:s0
-
-# Graphics
-genfscon sysfs /devices/platform/13040000.mali                                                                    u:object_r:sysfs_mali:s0
-
-# OTG
-genfscon sysfs /class/power_supply/usb/otg_switch                                                                 u:object_r:sysfs_otg_switch:s0
-genfscon sysfs /devices/platform/charger/power_supply/usb/otg_switch                                              u:object_r:sysfs_otg_switch:s0

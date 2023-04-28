@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "CarrierConfigOverlay",
+    name: "CarrierConfigOverlayRMP6768",
     theme: "CarrierConfigOverlay",
     certificate: "platform",
     sdk_version: "current",

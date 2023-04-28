@@ -1,5 +1,5 @@
 runtime_resource_overlay {
-    name: "TetheringConfigOverlay",
+    name: "TetheringConfigOverlayRMP6768",
     theme: "TetheringConfigOverlay",
     certificate: "platform",
     sdk_version: "current",

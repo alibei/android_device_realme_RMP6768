@@ -1,8 +1,8 @@
 # OTG
 allow init sysfs_otg_switch:file rw_file_perms;
 
-# Socket Device
-allow init socket_device:sock_file { create setattr unlink };
-
 # Sensor
 allow init sysfs_sensor:file {setattr};
+
+# Socket Device
+allow init socket_device:sock_file { create setattr unlink };
