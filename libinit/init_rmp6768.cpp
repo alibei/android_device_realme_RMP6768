@@ -114,6 +114,7 @@ void device_load_properties()
     string hw = GetProperty("ro.boot.hwversion", "");
     if (hw == "0" || hw == "1" || hw == "2") {
         model = "Realme Pad LTE";
+        property_override("ro.boot.product.hardware.sku", "rmp2102");
         if (region == "EEA") {
             device = "RMP2102EEA";
         }
