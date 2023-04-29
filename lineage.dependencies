@@ -29,4 +29,10 @@
     "target_path": "device/mediatek/sepolicy_vndr",
     "revision": "lineage-20.0"
   },
+  {
+    "remote": "gitlab",
+    "repository": "alibei/android_vendor_proprietary_widevine",
+    "target_path": "vendor/proprietary/widevine",
+    "revision": "thirteen"
+  },
 ]

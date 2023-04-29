@@ -632,15 +632,10 @@ system/etc/init/kpoc_charger.rc
 -vendor/bin/dtc_vendor
 
 # DRM
--vendor/bin/hw/android.hardware.drm@1.3-service.widevine
-vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 -vendor/lib/mediadrm/libwvdrmengine.so
 -vendor/lib/liboemcrypto.so
--vendor/lib/libwvhidl.so
 -vendor/lib64/mediadrm/libwvdrmengine.so
 -vendor/lib64/liboemcrypto.so
--vendor/lib64/libwvhidl.so
 
 # Display
 -vendor/bin/hw/vendor.mediatek.hardware.dfps@1.0-service
