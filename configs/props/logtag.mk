@@ -88,6 +88,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.log.tag.MtkUiccCardApp=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.MtkUiccCtrl=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.MtkUsimFH=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.mtk_pdc_check_charger=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.NetAgent_IO=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.NetLnkEventHdlr=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.NetworkPolicy=$(VENDOR_LOG_LEVEL) \
