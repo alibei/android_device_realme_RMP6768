@@ -112,6 +112,7 @@ ro.lmk.thrashing_limit_decay=2
 ro.lmk.kill_timeout_ms=100
 
 # Media
+debug.stagefright.ccodec=0
 ro.vendor.pref_scale_enable_cfg=1
 vendor.mtk.vdec.waitkeyframeforplay=9
 
