@@ -225,10 +225,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
 
-# Neutral Networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
-
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayRMP6768 \
