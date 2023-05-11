@@ -39,6 +39,9 @@ sys.ipo.disable=1
 # Kernel
 ro.kernel.zio=38,108,105,16
 
+# Keyguard
+persist.wm.enable_remote_keyguard_animation=0
+
 # Order
 ro.product.property_source_order=odm,vendor,product,system
 
