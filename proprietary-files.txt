@@ -632,7 +632,6 @@ vendor/etc/init/vendor.mediatek.hardware.dfps@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 -vendor/lib/hw/dfps.mt6768.so
--vendor/lib/hw/memtrack.mt6768.so
 -vendor/lib/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 -vendor/lib/hw/vendor.mediatek.hardware.pq@2.6-impl.so
 -vendor/lib/libdpframework.so
@@ -660,7 +659,6 @@ vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 -vendor/lib/vendor.mediatek.hardware.pq@2.6.so
 -vendor/lib64/hw/dfps.mt6768.so
 -vendor/lib64/hw/hwcomposer.mt6768.so
--vendor/lib64/hw/memtrack.mt6768.so
 -vendor/lib64/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 -vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so
 -vendor/lib64/libdpframework.so
