@@ -79,6 +79,7 @@ ro.vendor.mtk_aal_support=1
 ro.vendor.mtk_blulight_def_support=1
 
 # Dolby
+ro.vendor.audio.dolby.dax.support=true
 ro.vendor.dolby.dax.version=DAX3_3.6.0.12_r1
 
 # DRAM
