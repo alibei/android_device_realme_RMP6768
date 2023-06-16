@@ -35,4 +35,10 @@
     "target_path": "vendor/proprietary/widevine",
     "revision": "thirteen"
   },
+  {
+    "remote": "gitlab",
+    "repository": "alibei/android_vendor_partner_gms",
+    "target_path": "vendor/partner_gms",
+    "revision": "thirteen"
+  },
 ]
