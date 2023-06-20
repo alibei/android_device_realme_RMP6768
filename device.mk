@@ -96,9 +96,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     tinymix
 
-PRODUCT_PACKAGES += \
-    BesLoudness
-
 # Audio configs
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
