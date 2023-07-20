@@ -681,6 +681,25 @@ vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 -vendor/lib64/vendor.mediatek.hardware.pq@2.5.so
 -vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 
+# Dolby
+system_ext/etc/permissions/com.dolby.daxservice.xml
+-system_ext/priv-app/daxService/daxService.apk
+-vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
+vendor/etc/dolby/dax-default.xml
+vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
+-vendor/lib/soundfx/libswdap.so
+-vendor/lib/libstagefright_soft_ac4dec.so
+-vendor/lib/libstagefright_soft_ddpdec.so
+-vendor/lib/libstagefrightdolby.so
+-vendor/lib/vendor.dolby.hardware.dms@2.0.so
+-vendor/lib64/soundfx/libswdap.so
+-vendor/lib64/libdlbdsservice.so
+-vendor/lib64/libstagefright_soft_ac4dec.so
+-vendor/lib64/libstagefright_soft_ddpdec.so
+-vendor/lib64/libstagefrightdolby.so
+-vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
+-vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+
 # Engineering
 -vendor/bin/factory
 vendor/etc/init/bootperf.rc

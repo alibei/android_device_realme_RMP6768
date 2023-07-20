@@ -88,6 +88,11 @@
         <fqname>@1.1::IUsbGadget/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.dolby.hardware.dms</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IDms/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.mediatek.hardware.atci</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IAtcid/default</fqname>
