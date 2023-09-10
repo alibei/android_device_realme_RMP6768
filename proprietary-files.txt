@@ -615,8 +615,6 @@ system/etc/init/kpoc_charger.rc
 -system/lib/libsysenv_system.so
 
 # DRM
--vendor/lib/mediadrm/libwvdrmengine.so
--vendor/lib/liboemcrypto.so
 -vendor/lib64/mediadrm/libwvdrmengine.so
 -vendor/lib64/liboemcrypto.so
 
