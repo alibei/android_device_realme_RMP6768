@@ -1299,8 +1299,10 @@ vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 # Sensors
 -vendor/bin/hw/android.hardware.sensors@2.0-service-mediatek
 vendor/etc/init/android.hardware.sensors@2.0-service-mediatek.rc
+-vendor/lib/libsensorndkbridge.so:vendor/lib/libsensorndkbridge-v30.so
 -vendor/lib/libhwm.so
 -vendor/lib64/hw/sensors.mt6768.so
+-vendor/lib64/libsensorndkbridge.so:vendor/lib64/libsensorndkbridge-v30.so
 -vendor/lib64/libcharon-ss.so
 -vendor/lib64/libhwm.so
 -vendor/lib64/libksensor.so
@@ -1399,8 +1401,8 @@ vendor/etc/init/wlan_assistant.rc
 vendor/etc/vintf/manifest/manifest.xml
 -vendor/lib/libwapi.so
 -vendor/lib/libwpa_client.so
--vendor/lib64/libwifi-hal.so
 -vendor/lib64/libwapi.so
+-vendor/lib64/libwifi-hal.so
 -vendor/lib64/libwifitest.so
 -vendor/lib64/libwpa_client.so
 -vendor/lib64/vendor.mediatek.hardware.wifi.supplicant@2.0.so
