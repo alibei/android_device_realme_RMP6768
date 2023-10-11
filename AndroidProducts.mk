@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_RMP6768.mk
+    $(LOCAL_DIR)/cipher_RMP6768.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_RMP6768-user \
-    lineage_RMP6768-userdebug \
-    lineage_RMP6768-eng
+    cipher_RMP6768-user \
+    cipher_RMP6768-userdebug \
+    cipher_RMP6768-eng

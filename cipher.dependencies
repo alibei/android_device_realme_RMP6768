@@ -3,36 +3,30 @@
     "remote": "github",
     "repository": "Realme-Pad-Dev/android_vendor_realme_RMP6768",
     "target_path": "vendor/realme/RMP6768",
-    "revision": "lineage-20.0"
+    "revision": "cipher-fourteen"
   },
   {
     "remote": "github",
     "repository": "Realme-Pad-Dev/android_kernel_realme_oppo8786",
     "target_path": "kernel/realme/oppo8786",
-    "revision": "lineage-20.0"
+    "revision": "cipher-fourteen"
   },
   {
     "remote": "github",
-    "repository": "LineageOS/android_hardware_mediatek",
+    "repository": "Realme-Pad-Dev/android_hardware_mediatek",
     "target_path": "hardware/mediatek",
-    "revision": "lineage-20.0"
+    "revision": "cipher-fourteen"
   },
   {
     "remote": "github",
-    "repository": "LineageOS/android_device_mediatek_sepolicy_vndr",
+    "repository": "Realme-Pad-Dev/android_device_mediatek_sepolicy_vndr",
     "target_path": "device/mediatek/sepolicy_vndr",
-    "revision": "lineage-20.0"
+    "revision": "cipher-fourteen"
   },
   {
     "remote": "gitlab",
     "repository": "alibei/android_vendor_proprietary_widevine",
     "target_path": "vendor/proprietary/widevine",
-    "revision": "thirteen"
-  },
-  {
-    "remote": "gitlab",
-    "repository": "alibei/android_vendor_partner_gms",
-    "target_path": "vendor/partner_gms",
-    "revision": "thirteen"
+    "revision": "cipher-fourteen"
   },
 ]

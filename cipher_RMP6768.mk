@@ -18,21 +18,17 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet.mk)
+# Inherit some common Cipher stuff.
+$(call inherit-product, vendor/cipher/config/common_full_tablet.mk)
 
 # Inherit from RMP6768 device
 $(call inherit-product, device/realme/RMP6768/device.mk)
 
 PRODUCT_DEVICE := RMP6768
-PRODUCT_NAME := lineage_RMP6768
+PRODUCT_NAME := cipher_RMP6768
 PRODUCT_BRAND := Realme
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_MODEL := Realme Pad
-
-# Gapps
-WITH_GMS := true
-GMS_MAKEFILE := gms_custom.mk
 
 # Build info
 BUILD_FINGERPRINT := "realme/RMP2102/RE54C1L1:11/RP1A.200720.011/1677153829078:user/release-keys"
