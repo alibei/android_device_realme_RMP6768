@@ -17,6 +17,9 @@
 DEVICE_PATH := device/realme/RMP6768
 KERNEL_PATH := device/realme/RMP6768-kernel
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
