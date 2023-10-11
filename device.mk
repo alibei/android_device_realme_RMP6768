@@ -345,7 +345,7 @@ include $(DEVICE_PATH)/configs/props/logtag.mk
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.RMP6768 \
+    android.hardware.wifi@1.0-service \
     android.hardware.wifi.supplicant@1.3.vendor \
     hostapd
 
