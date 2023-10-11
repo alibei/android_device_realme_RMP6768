@@ -15,6 +15,7 @@
 #
 
 DEVICE_PATH := device/realme/RMP6768
+KERNEL_PATH := device/realme/RMP6768-kernel
 
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
@@ -188,12 +189,11 @@ PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
 # Kernel
-LOCAL_KERNEL := device/realme/RMP6768-kernel/Image.gz
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(KERNEL_PATH)/Image.gz:kernel
 
 # Kernel headers
-PRODUCT_VENDOR_KERNEL_HEADERS += device/realme/RMP6768-kernel/kernel-headers
+PRODUCT_VENDOR_KERNEL_HEADERS += $(KERNEL_PATH)/kernel-headers
 
 # Keymaster
 PRODUCT_PACKAGES += \
