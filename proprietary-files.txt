@@ -681,11 +681,6 @@ vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 -vendor/lib64/vendor.mediatek.hardware.pq@2.5.so
 -vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 
-# Engineering
--vendor/bin/factory
-vendor/etc/init/bootperf.rc
-vendor/etc/factory.ini
-
 # Firmware
 vendor/firmware/tp/21697/FW_HX83102E_TXD.bin
 vendor/firmware/tp/21697/FW_HX83102E_TXD_TEST.img
