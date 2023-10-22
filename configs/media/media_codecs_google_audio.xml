@@ -16,11 +16,6 @@
 
 <Included>
     <Decoders>
-        <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg">
-            <Limit name="channel-count" max="2" />
-            <Limit name="sample-rate" ranges="8000,11025,12000,16000,22050,24000,32000,44100,48000" />
-            <Limit name="bitrate" range="8000-320000" />
-        </MediaCodec>
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp">
             <Limit name="channel-count" max="1" />
             <Limit name="sample-rate" ranges="8000" />
