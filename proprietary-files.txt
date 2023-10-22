@@ -1079,7 +1079,6 @@ vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
 -vendor/bin/vpud
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
 vendor/etc/init/vpud.rc
-vendor/etc/mtk_omx_core.cfg
 -vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 -vendor/lib/AVCSecureVdecCA.so
 -vendor/lib/AVCSecureVencCA.so
