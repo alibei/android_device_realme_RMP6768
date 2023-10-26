@@ -356,7 +356,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.RMP6768
+    android.hardware.usb-service.RMP6768
 
 # Vendor Log Tag
 include $(DEVICE_PATH)/configs/props/logtag.mk
